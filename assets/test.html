@@ -1,0 +1,1082 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <title>Masstech Service Summary</title>
+        <link rel="stylesheet" type="text/css" href="https://mircha.github.io/healthcheck/assets/viewscroller/viewScroller.css">
+        <link href="https://mircha.github.io/healthcheck/assets/css/material-components-web.min.css" rel="stylesheet">
+        <script src="https://mircha.github.io/healthcheck/assets/viewscroller/material-components-web.min.js"></script>
+        <link rel="stylesheet" href="https://mircha.github.io/healthcheck/assets/css/icon.css">
+        <link rel="stylesheet" href="https://mircha.github.io/healthcheck/assets/css/palette.css">
+        <link rel="stylesheet" href="https://mircha.github.io/healthcheck/assets/css/style.css">
+        <script type="text/javascript" src="https://mircha.github.io/healthcheck/assets/viewscroller/canvasjs.min.js"></script>
+        <link rel="stylesheet" href="https://mircha.github.io/healthcheck/assets/css/bootstrap-grid.min.css">
+    </head>
+    <body>
+        <aside class="mdc-drawer mdc-drawer--dismissible light-primary-color">
+            <div class="mdc-drawer__content">
+                <div class="mdc-list">
+                    <a class="mdc-list-item" href="#view-0" aria-current="page">
+                        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+                        <span class="mdc-list-item__text">Home</span>
+                    </a>
+                    <a class="mdc-list-item" href="#view-1">
+                        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">error_outline</i>
+                        <span class="mdc-list-item__text">System Summary</span>
+                    </a>
+                    <a class="mdc-list-item" href="#view-2">
+                        <i class="material-icons mdc-list-item__graphic vs-anchor" aria-hidden="true">local_movies</i>
+                        <span class="mdc-list-item__text">Content</span>
+                    </a>
+                    <a class="mdc-list-item" href="#view-3">
+                        <i class="material-icons mdc-list-item__graphic vs-anchor" aria-hidden="true">storage</i>
+                        <span class="mdc-list-item__text">Hardware</span>
+                    </a>
+                    <!--
+                    <a class="mdc-list-item" href="#view-4">
+                        <i class="material-icons mdc-list-item__graphic vs-anchor" aria-hidden="true">network_check</i>
+                        <span class="mdc-list-item__text">Operations</span>
+                    </a>
+                    -->
+                    <a class="mdc-list-item" href="#view-4">
+                        <i class="material-icons mdc-list-item__graphic vs-anchor" aria-hidden="true">widgets</i>
+                        <span class="mdc-list-item__text">Software</span>
+                    </a>                    
+                    <a class="mdc-list-item" href="#view-5">
+                        <i class="material-icons mdc-list-item__graphic vs-anchor" aria-hidden="true">headset_mic</i>
+                        <span class="mdc-list-item__text">Support</span>
+                    </a>
+                    <a class="mdc-list-item" href="#view-6">
+                        <i class="material-icons mdc-list-item__graphic vs-anchor" aria-hidden="true">assignment_turned_in</i>
+                        <span class="mdc-list-item__text">Conclusion</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+    
+        <div class="mdc-drawer-app-content">
+            <header class="mdc-top-app-bar app-bar dark-primary-color mdc-elevation--z1" id="app-bar">
+                <div class="mdc-top-app-bar__row">
+                    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
+                            id="test">menu_open</button>
+                        <span class="mdc-top-app-bar__title">Service Summary Report</span>
+                    </section>
+                </div>
+            </header>
+            <main class="main-content" id="main-content">
+                <div class="mdc-top-app-bar--fixed-adjust">
+                    <div class="mainbag">
+                        <div vs-anchor="view-0" class="mainview view1 dark-primary-color">
+                            <div class="vs-center-wrap">
+                                <div class="vs-center" style="vertical-align: top;">
+                                    <div class="dark-primary-color text-primary-color" style="height: 100%;">
+                                        <br>
+                                        <div class="row my-auto">
+                                        <div style="margin:0 auto; width:90%; text-align:justify">
+                                            <p style="font-size:medium">                                       
+                                                Hello and welcome.... nice text describing the health check report
+                                            </p> 
+                                            <p style="font-size:medium">                                       
+                                                #second paragraph
+                                            </p>
+                                            <br>
+                                            <p style="font-size:medium">                                       
+                                                This report contains data recorded over the last year, from March 19th, 2019 to March 19th, 2020
+                                            </p>
+                                            &nbsp;<br>&nbsp;
+                                            <p style="font-size:large">Usage</p>
+                                            
+                                            <p style="font-size:medium">
+                                                To go to the important sections you can use the menu on the top left side <i class="material-icons" aria-hidden="true" style="color:white">menu_open</i> and using <i class="material-icons">keyboard_arrow_left</i> and <i class="material-icons">keyboard_arrow_right</i> to go to subviews, when available
+                                            </p>
+                                            <p style="font-size:medium">
+                                                Another way to navigate inside this page either scroll within the page, use the arrow keys to navigate from view to view (<i class="material-icons">arrow_upward</i> and <i class="material-icons">arrow_downward</i> to go trough sections and  <i class="material-icons">arrow_back</i> and <i class="material-icons">arrow_forward</i> for subsections). 
+                                            </p>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- system information -->
+                        <div vs-anchor="view-1" class="mainview view1 dark-primary-color">
+                            <div class="vs-center-wrap">
+                                <div class="vs-center" style="vertical-align: top;">
+                                    <div class="text-primary-color" style="height: 100%;">
+                                    <div style="height:75vh;margin-bottom:0;" class="row my-auto">
+                                        <div style="margin:0 auto"><br>
+                                        System Summary
+                                        </div>
+                                        <br>
+                                        <div style="margin:0 auto; width:90%; text-align:justify">
+                                            
+                                            <p style="font-size:medium">
+                                            <i class="material-icons">error_outline</i>&nbsp; &nbsp; On your system, identified by Masstech as Caracol_MassStore Main, you are running MassStore version 8.2.3.1. 
+                                            </p>
+                                            <br>
+                                            <p style="font-size:medium">
+                                            <i class="material-icons">storage</i>&nbsp; &nbsp; According to our records, the exluding any tape libraries and cache storages is 5. Out of these, 1 are acting as application servers,
+                                                1 are acting as database servers and 4 are acting as external datamovers. Also, there are 7 transcode engine instances running on your system. 
+                                                The system is currently connected to 87 external storage locations (video servers, watchfolders, FTP servers & other) and 1 tape libraries
+                                            </p>
+                                            <br>
+                                            <p style="font-size:medium">
+                                            <i class="material-icons">assignment</i>&nbsp; &nbsp; The current support agreement status is Under Support and is set to expire on June 7th, 2020. The current Service agreement is Gold, which means we support the system 24x7.
+                                            </p>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- content information -->
+                        <div vs-anchor="view-2" class="mainview view5">
+                            <div class="subbag">
+                                <div vs-anchor="subview-a" class="subview subview-a">
+                                    <div class="vs-center-wrap">
+                                        <div class="vs-center" style="vertical-align: top;">
+                                            <div class="text-primary-color" style="width: 100vw; height: 100%;">
+                                                <div style="height:75vh;margin-bottom:0;" class="row my-auto">
+                                                    <div style="margin: 0 auto; width:100%">
+                                                        <br>
+                                                        Content
+                                                    </div>
+                                                    <br>
+                                                    <div class="container-content">
+                                                        <p style="font-size: medium;text-align:center;">
+                                                            This section contains information regarding content inside your Masstech system
+                                                            <br><br>
+                                                        </p>
+                                                        <div class="row">
+                                                            <div class="col"></div>
+                                                            <div class="col">
+                                                                <hX style="font-size: medium;">Breakdown of section:</hX>
+                                                                <ul style="font-size: medium;list-style:none;">
+                                                                    <li>Content Summary</li>
+                                                                    <li>Asset growth</li>
+                                                                    <li>Instances growth</li>
+                                                                    <li>Instances on tape growth</li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="container-content">
+                                                    <div class="pos" style="text-align: center;">
+                                                        <button class="vs-subview-next"><i class="material-icons">keyboard_arrow_right</i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div vs-anchor="subview-b" class="subview subview-b">
+                                    <div class="vs-center-wrap">
+                                        <div class="vs-center">
+                                            <div style="margin:0 auto; width:90%; text-align:justify">
+                                                <div id="chartContainerContent1" class="chart-container"></div>
+                                                <div class="pos" style="text-align: center;">
+                                                    <button class="vs-subview-prev"><i class="material-icons">keyboard_arrow_left</i></button>
+                                                    <button class="vs-subview-next"><i class="material-icons">keyboard_arrow_right</i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div vs-anchor="subview-c" class="subview subview-c">
+                                    <div class="vs-center-wrap">
+                                        <div class="vs-center">
+                                            <div style="margin:0 auto; width:90%; text-align:justify">
+                                                <div id="chartContainerContent2" class="chart-container"></div>
+                                                <div class="pos" style="text-align: center;">
+                                                    <button class="vs-subview-prev"><i class="material-icons">keyboard_arrow_left</i></button>
+                                                    <button class="vs-subview-next"><i class="material-icons">keyboard_arrow_right</i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div vs-anchor="subview-ac" class="subview subview-ac">
+                                    <div class="vs-center-wrap">
+                                        <div class="vs-center">
+                                            <div style="margin:0 auto; width:90%; text-align:justify">
+                                                <div id="chartContainerContent3" class="chart-container"></div>
+                                                <div class="pos" style="text-align: center;">
+                                                    <button class="vs-subview-prev"><i class="material-icons">keyboard_arrow_left</i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                            
+                            </div>
+                        </div>
+                        <!-- hardware information -->
+                        <div vs-anchor="view-3" class="mainview view3">
+                            <div class="subbag">
+                                <div vs-anchor="subview-3a" class="subview subview-a">
+                                    <div class="vs-center-wrap">
+                                        <div class="vs-center" style="vertical-align: top;">
+                                            <div class="text-primary-color" style="width: 100vw; height: 100%;">
+                                                <div style="height:75vh;margin-bottom:0;" class="row my-auto">
+                                                    <div style="margin: 0 auto">
+                                                        <br>
+                                                        Hardware
+                                                    </div>
+                                                    <br>
+                                                    <div style="margin:0 auto; width:90%; text-align:center">
+                                                        <p style="font-size: medium;">
+                                                            This section contains information regarding Masstech host servers, tape libraries, cache storages and connected storage locations
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div style="margin:0 auto; width:90%; text-align:justify">
+                                                    <div class="pos" style="text-align: center;">
+                                                        <button class="vs-subview-next"><i class="material-icons">keyboard_arrow_right</i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div vs-anchor="subview-3b" class="subview subview-d">
+                                    <div class="vs-center-wrap">
+                                        <div class="vs-center">
+                                            <div class="text-primary-color" style="width: 100vw; height: 100%;">
+                                                <div style="height:75vh;margin-bottom:0;" class="row my-auto">
+                                                    <div style="margin: 0 auto">
+                                                        <br>
+                                                        Host Server Information
+                                                    </div>
+                                                    <br>
+                                                    <div style="margin:0 auto; width:90%; text-align:center">
+                                                        <p style="font-size: medium; text-align:left;">
+                                                        We have configured 1 application server(s), 1 database server(s), 5 datamovers (4 physical servers and 1 on the application server) and are running 7 transcode engine instances (multiple instances can run a server)
+                                                            
+        <div class="row dark-primary-color" style="font-size:medium;text-align:left;">
+            <div class="col">Name</div>
+            <div class="col">Role</div>
+            <div class="col">CPU</div>
+            <div class="col">Memory</div>
+            <div class="col">Windows OS</div>
+            <div class="col">OS drive size</div>
+        </div>
+        <div class="row accent-color" style="font-size:medium;text-align:left;">
+            <div class="col">Application Server</div>
+            <div class="col">Application&Transcoder</div>
+            <div class="col">16cores @ 2.10Ghz</div>
+            <div class="col">64.00 GB</div>
+            <div class="col">Server 2012 R2 Standard</div>
+            <div class="col">278.85 GB</div>
+        </div>
+        <div class="row" style="font-size:medium;text-align:left;">
+            <div class="col">Datamover Server 1</div>
+            <div class="col">DataMover&Transcoder</div>
+            <div class="col">16cores @ 2.10Ghz</div>
+            <div class="col">64.00 GB</div>
+            <div class="col">Server 2012 R2 Standard</div>
+            <div class="col">279.00 GB</div>
+        </div>
+        <div class="row accent-color" style="font-size:medium;text-align:left;">
+            <div class="col">Database Server</div>
+            <div class="col">Database</div>
+            <div class="col">16cores @ 2.10Ghz</div>
+            <div class="col">64.00 GB</div>
+            <div class="col">Server 2012 R2 Standard</div>
+            <div class="col">222.97 GB</div>
+        </div>
+        <div class="row" style="font-size:medium;text-align:left;">
+            <div class="col">Datamover Server 2</div>
+            <div class="col">DataMover&Transcoder</div>
+            <div class="col">24cores @ 2.40Ghz</div>
+            <div class="col">32.00 GB</div>
+            <div class="col">Server 2008 R2 Standard</div>
+            <div class="col">278.00 GB</div>
+        </div>
+        <div class="row accent-color" style="font-size:medium;text-align:left;">
+            <div class="col">Datamover Server 3</div>
+            <div class="col">DataMover&Transcoder</div>
+            <div class="col">24cores @ 2.00Ghz</div>
+            <div class="col">32.00 GB</div>
+            <div class="col">Server 2008 R2 Standard</div>
+            <div class="col">278.00 GB</div>
+        </div>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div style="margin:0 auto; width:90%; text-align:justify">
+                                                    <div class="pos" style="text-align: center;">
+                                                        <button class="vs-subview-prev"><i class="material-icons">keyboard_arrow_left</i></button>
+                                                        <button class="vs-subview-next"><i class="material-icons">keyboard_arrow_right</i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div vs-anchor="subview-3c" class="subview subview-e">
+                                    <div class="vs-center-wrap">
+                                        <div class="vs-center">
+                                            <div class="text-primary-color" style="width: 100vw; height: 100%;">
+                                                <div style="height:75vh;margin-bottom:0;" class="row my-auto">
+                                                    <div style="margin: 0 auto">
+                                                        <br>
+                                                        Tape Libraries Information
+                                                    </div>
+                                                    <br>
+                                                    <div style="margin:0 auto; width:90%; text-align:center">
+                                                        <p style="font-size: medium;">
+                                                            We have configured a total of 3 and out of these 1 ONLINE.
+                                                            <br><br>
+                                                        </p>
+                                                        <p style="font-size: medium;">
+                                                            
+    <div class="row dark-primary-color" style="font-size:medium;text-align:left;">
+        <div class="col">Name</div>
+        <div class="col">Vendor</div>
+        <div class="col">Model</div>
+        <div class="col">Drive</div>
+        <div class="col">Drive Generation</div>
+        <div class="col">Slots</div>
+    </div>
+    <div class="row accent-color" style="font-size:medium;text-align:left;">
+        <div class="col">IBM Tape Library</div>
+        <div class="col">IBM</div>
+        <div class="col">TS4500</div>
+        <div class="col">8</div>
+        <div class="col">LTO7</div>
+        <div class="col">0</div>
+    </div>
+                                                        </p>
+                                                        <p style="font-size: medium;">
+                                                            The following is a report for including slots and tapes from all libraries
+                                                            <br>
+                                                            <div class="row dark-primary-color" style="font-size: medium;">
+                                                                <div class="col">Total Slots</div>
+                                                                <div class="col">Full Slots</div>
+                                                                <div class="col">Unformatted</div>
+                                                                <div class="col">Formatted</div>
+                                                                <div class="col">Online</div>
+                                                                <div class="col">Read Only</div>
+                                                                <div class="col">Offline</div>
+                                                            </div>
+                                                            <div class="row accent-color" style="font-size: medium;">
+                                                                <div class="col">1850</div>
+                                                                <div class="col">1717</div>
+                                                                <div class="col">57</div>
+                                                                <div class="col">23</div>
+                                                                <div class="col">680</div>
+                                                                <div class="col">951</div>
+                                                                <div class="col">384</div>
+                                                            </div>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div style="margin:0 auto; width:90%; text-align:justify">
+                                                    <div class="pos" style="text-align: center;">
+                                                        <button class="vs-subview-prev"><i class="material-icons">keyboard_arrow_left</i></button>
+                                                        <button class="vs-subview-next"><i class="material-icons">keyboard_arrow_right</i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div vs-anchor="subview-3c" class="subview subview-e">
+                                    <div class="vs-center-wrap">
+                                        <div class="vs-center">
+                                            <div class="text-primary-color" style="width: 100vw; height: 100%;">
+                                                <div style="height:75vh;margin-bottom:0;" class="row my-auto">
+                                                    <div style="margin: 0 auto">
+                                                        <br>
+                                                        Cache and Storage Locations Information
+                                                    </div>
+                                                    <br>
+                                                    <div style="margin:0 auto; width:90%; text-align:center">
+                                                        <p style="font-size: medium;">
+                                                            We have configured a total of 87 that are ONLINE and 27 that are OFFLINE.
+                                                            <br><br>
+                                                        </p>
+                                                        <p style="font-size: medium;">
+                                                            
+                                                        </p>
+                                                        <p style="font-size: medium;">
+                                                            The current information we have available for the cache storage
+                                                            <br>
+                                                            <div class="row dark-primary-color" style="font-size: medium;">
+                                                                <div class="col">Name</div>
+                                                                <div class="col">Type</div>
+                                                                <div class="col">Vendor</div>
+                                                                <div class="col">Model</div>
+                                                                <div class="col">Size</div>
+                                                                <div class="col">Disks</div>
+                                                            </div>
+                                                            <div class="row accent-color" style="font-size: medium;">
+                                                                <div class="col">Cache</div>
+                                                                <div class="col">SAN</div>
+                                                                <div class="col">IBM</div>
+                                                                <div class="col">DS3512</div>
+                                                                <div class="col">134101.00</div>
+                                                                <div class="col">0</div>
+                                                            </div>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div style="margin:0 auto; width:90%; text-align:justify">
+                                                    <div class="pos" style="text-align: center;">
+                                                        <button class="vs-subview-prev"><i class="material-icons">keyboard_arrow_left</i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- operation information -->
+                        <div vs-anchor="view-4" class="mainview">
+                            <div class="subbag">
+                                <div vs-anchor="subview-4a" class="subview subview-a">
+                                    <div class="vs-center-wrap">
+                                        <div class="vs-center" style="vertical-align: top;">
+                                            <div class="text-primary-color" style="width: 100vw; height: 100%;">
+                                                <div style="height:75vh;margin-bottom:0;" class="row my-auto">
+                                                    <div style="margin: 0 auto">
+                                                        <br>
+                                                        Software
+                                                    </div>
+                                                    <br>
+                                                    <div style="margin:0 auto; width:90%; text-align:center">
+                                                        <p style="font-size: medium;">
+                                                            This section contains key information regarding software installed on your system and upgrades performed
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div style="margin:0 auto; width:90%; text-align:justify">
+                                                    <div class="pos" style="text-align: center;">
+                                                        <button class="vs-subview-next"><i class="material-icons">keyboard_arrow_right</i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div vs-anchor="subview-4b" class="subview subview-d">
+                                    <div class="vs-center-wrap">
+                                        <div class="vs-center">
+                                            <div class="text-primary-color" style="margin:0 auto; width:90%; text-align:justify">
+                                                <div style="height:75vh;margin-bottom:0;" class="row my-auto">
+                                                <div style="margin: 0 auto">
+                                                    <br>
+                                                    Software Summary
+                                                </div>
+                                                <br>
+                                                <div style="margin:0 auto; width:90%; text-align:justify;font-size: medium;">
+                                                    <div class="row">
+                                                        <div class="col"></div>
+                                                        <div class="col">
+                                                            <div class="row accent-color">
+                                                                <div class="col-8">MassStore version:</div><div class="col">8.2.3.1</div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-8">Transcode Engine version:</div><div class="col">1.14.3.0</div>
+                                                            </div>
+                                                            <div class="row accent-color">
+                                                                <div class="col-8">Workflow Engine version:</div><div class="col"></div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-8">Oracle Database version:</div><div class="col">11.2.0.4.0</div>
+                                                            </div>
+                                                            <div class="row accent-color">
+                                                                <div class="col-8">Apache Tomcat version:</div><div class="col">8.5.24</div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-8">PostgreSQL version:</div><div class="col">9.4</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                <div class="pos" style="text-align: center;">
+                                                    <button class="vs-subview-prev"><i class="material-icons">keyboard_arrow_left</i></button>
+                                                    <button class="vs-subview-next"><i class="material-icons">keyboard_arrow_right</i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div vs-anchor="subview-4b" class="subview subview-d">
+                                    <div class="vs-center-wrap">
+                                        <div class="vs-center">
+                                            <div class="text-primary-color" style="margin:0 auto; width:90%; text-align:justify">
+                                                <div style="height:75vh;margin-bottom:0;" class="row my-auto">
+                                                <div style="margin: 0 auto">
+                                                    <br>
+                                                    Upgrade Summary
+                                                </div>
+                                                <br>
+                                                <div style="margin:0 auto; width:90%; text-align:center">
+                                                    <p style="font-size: medium;">
+                                                        There are 10 operations done on this system overall : 6 software upgrades and 4 applying of patches.<br>
+                                                        During the last year, there were 2 operations made: 2 software upgrades and 0 applying of patches.
+                                                        <br><br>
+                                                    </p>
+                                                        <div class="row" style="font-size:medium">
+                                                            <div class="col-1"></div>
+                                                            <div class="col">
+                                                                <div class="row">
+                                                                    <div class="col" style="text-align:right">The latest Application upgrade:</div><div class="col" style="text-align:left">from version 8.2.2.3 to version 8.2.3 on November 8th, 2019</div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="text-align:right">The latest Transcode Engine upgrade:</div><div class="col" style="text-align:left">none in the last year</div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="text-align:right">The latest Workflow Engine upgrade:</div><div class="col" style="text-align:left">none in the last year</div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col" style="text-align:right">The latest Apache Tomcat upgrade:</div><div class="col" style="text-align:left">none in the last year</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-1"></div>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                                <div class="pos" style="text-align: center;">
+                                                    <button class="vs-subview-prev"><i class="material-icons">keyboard_arrow_left</i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- support information -->
+                        <div vs-anchor="view-5" class="mainview view5">
+                            <div class="subbag">
+                                <div vs-anchor="subview-5a" class="subview subview-a">
+                                    <div class="vs-center-wrap">
+                                        <div class="vs-center" style="vertical-align: top;">
+                                            <div class="text-primary-color" style="height: 100%;">
+                                                <div style="height:75vh;margin-bottom:0;" class="row my-auto">
+                                                    <div style="margin:0 auto; width:100%">
+                                                        <br>
+                                                        Support
+                                                    </div>
+                                                    <br>
+                                                    <div class="container-content">
+                                                        <p style="font-size: medium;text-align:center;">
+                                                            This section contains key metrics taken from our ticketing system. 
+                                                            We have logged into our system 184 cases in total, last year's case count being 66
+                                                            <br><br>
+                                                        </p>
+                                                        <div class="row">
+                                                            <div class="col"></div>
+                                                            <div class="col">
+                                                                <hX style="font-size: medium;">Breakdown of support cases:</hX>
+                                                                <ul style="font-size: medium;list-style:none;">
+                                                                    <li>Monthly case creation</li>
+                                                                    <li>Current status of cases</li>
+                                                                    <li>Priority assigned and SLA performance</li>
+                                                                    <li>Category of cases</li>
+                                                                    <li>How cases are being reported</li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="container-content">
+                                                    <div class="pos" style="text-align: center;">
+                                                        <button class="vs-subview-next"><i class="material-icons">keyboard_arrow_right</i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div vs-anchor="subview-5e" class="subview subview-e">
+                                    <div class="vs-center-wrap">
+                                        <div class="vs-center">
+                                            <div class="text-primary-color" style="margin:0 auto; width:95%; text-align:justify">
+                                                <div class="row my-auto">
+                                                    <div class="col-3 my-auto">
+                                                    <br>
+                                                        <p style="font-size:medium">
+                                                            <hX style="font-size:medium">Summary of cases over the last year</hX>
+                                                            <ul style="font-size:small;list-style:none">
+                                                                <li>April - 6</li>
+                                                                <li>May - 3</li>
+                                                                <li>June - 7</li>
+                                                                <li>July - 3</li>
+                                                                <li>August - 3</li>
+                                                                <li>September - 10</li>
+                                                                <li>October - 5</li>
+                                                                <li>November - 5</li>
+                                                                <li>December - 6</li>
+                                                                <li>January - 3</li>
+                                                                <li>February - 9</li>
+                                                                <li>March - 6</li>
+                                                            </ul>
+                                                        </p>
+                                                    </div>
+                                                    <div class="col my-auto">
+                                                        <div id="chartContainerSupport5" class="chart-container"></div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="pos" style="text-align: center;">
+                                                    <button class="vs-subview-prev"><i class="material-icons">keyboard_arrow_left</i></button>
+                                                    <button class="vs-subview-next"><i class="material-icons">keyboard_arrow_right</i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div vs-anchor="subview-5b" class="subview subview-d">
+                                    <div class="vs-center-wrap">
+                                        <div class="vs-center">
+                                            <div style="margin:0 auto; width:95%; text-align:justify">
+                                                <div class="row text-primary-color my-auto">
+                                                    <div class="col-3 my-auto">
+                                                    <br>
+                                                        <p style="font-size:medium">
+                                                            <hX style="font-size:medium">Summary of case statuses</hX>
+                                                            <ul style="font-size:small;list-style:none">
+                                                                <li>Open - 0</li>
+                                                                <li>In Progress - 1</li>
+                                                                <li>Escalated - 1</li>
+                                                                <li>In Engineering - 1</li>
+                                                                <li>Wait for customer - 6</li>
+                                                                <li>Wait for 3rd party - 6</li>
+                                                                <li>Resolved - 0*</li>
+                                                                <li>Closed - 51</li>
+                                                            </ul>
+                                                            <p style="font-size:small;">*The status Resolved means that the issue has been resolved from our point of view,
+                                                             but we will wait 5 days in case there is a reply on the same issue. After 5 days the case is set to status Closed</p>
+                                                        </p>
+                                                    </div>
+                                                    <div class="col my-auto">
+                                                        <div id="chartContainerSupport1" class="chart-container"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="pos" style="text-align: center;">
+                                                    <button class="vs-subview-prev"><i class="material-icons">keyboard_arrow_left</i></button>
+                                                    <button class="vs-subview-next"><i class="material-icons">keyboard_arrow_right</i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div vs-anchor="subview-5c" class="subview subview-e">
+                                    <div class="vs-center-wrap">
+                                        <div class="vs-center">
+                                            <div style="margin:0 auto; width:99%; text-align:justify">
+                                            <div class="row text-primary-color my-auto">
+                                                <div class="col-2" style="v-align:middle; vertical-align:middle">
+                                                <br>
+                                                <p style="font-size:small; text-align:left">
+                                                <hX style="font-size:medium;">SLA times</hX>
+                                                <ul style="font-size:small;list-style:none">
+                                                    <li>Urgent - 8h*</li>
+                                                    <li>High - 2 days*</li>
+                                                    <li>Medium - 6 days</li>
+                                                    <li>Low - 6 to 30 days</li>
+                                                </ul>
+                                                <p style="font-size: small">* We are targeting to resolve Urgent and High priorities within 4h</p>
+                                                <hX style="font-size:medium;">Priority/Cases</hX>
+                                                <ul style="font-size:small;list-style:none">
+                                                    <li>Urgent - 2</li>
+                                                    <li>High - 25</li>
+                                                    <li>Medium - 26</li>
+                                                    <li>Low - 13</li>
+                                                </ul>
+                                                <hX style="font-size:medium;">SLA Performance</hX>
+                                                <ul style="font-size:small;list-style:none">
+                                                    <li>Fulfilled - 40</li>
+                                                    <li>Running - 12</li>
+                                                    <li>Violated - 14</li>
+                                                </ul>                                                
+                                                </p>
+                                                </div>
+                                                <div class="col my-auto"><div id="chartContainerSupport2" class="chart-container"></div></div>
+                                                <div class="col my-auto"><div id="chartContainerSupport3" class="chart-container"></div></div>
+                                            </div>
+                                                <div class="pos" style="text-align: center;">
+                                                    <button class="vs-subview-prev"><i class="material-icons">keyboard_arrow_left</i></button>
+                                                    <button class="vs-subview-next"><i class="material-icons">keyboard_arrow_right</i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div vs-anchor="subview-5j" class="subview subview-e">
+                                    <div class="vs-center-wrap">
+                                        <div class="vs-center">
+                                            <div style="margin:0 auto; width:95%; text-align:justify">
+                                                <div class="row text-primary-color my-auto">
+                                                    <div class="col-3 my-auto">
+                                                    <br>
+                                                    <p style="font-size:medium">
+                                                        <hX style="font-size:medium">Status of cases</hX>
+                                                        <ul style="font-size:small;list-style:none">
+                                                            <li>Assist in using the system - 14</li>
+                                                            <li>Assist in managing or modifying the system - 11</li>
+                                                            <li>Remedial operation - 19</li>
+                                                            <li>Upgrading and new versions - 2</li>
+                                                            <li>Simple Workflows - 5</li>
+                                                            <li>Known product issue (bug) - 6</li>
+                                                            <li>New product issue (bug) - 1</li>
+                                                            <li>Non-Masstech software issue - 1</li>
+                                                            <li>Non-Masstech hardware issue - 5</li>
+                                                            <li>System Maintenance - 1</li>
+                                                            <li>Other - 1</li>
+                                                        </ul>
+                                                    </p>
+                                                    </div>
+                                                    <div class="col my-auto"><div id="chartContainerSupport6" class="chart-container"></div></div>
+                                                </div>
+                                                <div class="pos" style="text-align: center;">
+                                                    <button class="vs-subview-prev"><i class="material-icons">keyboard_arrow_left</i></button>
+                                                    <button class="vs-subview-next"><i class="material-icons">keyboard_arrow_right</i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div vs-anchor="subview-5d" class="subview subview-e">
+                                    <div class="vs-center-wrap">
+                                        <div class="vs-center">
+                                            <div style="margin:0 auto; width:95%; text-align:justify">
+                                                <div class="row text-primary-color my-auto">
+                                                    <div class="col-3 my-auto">
+                                                        <br>
+                                                        <p style="font-size:medium">
+                                                            <hX style="font-size:medium">How cases are being reported</hX>
+                                                            <ul style="font-size:small;list-style:none">
+                                                                <li>Email - 62</li>
+                                                                <li>Phone - 0</li>
+                                                                <li>Chat - 0</li>
+                                                                <li>Proactive - 3</li>
+                                                                <li>System Notifications - 0</li>
+                                                            </ul>
+                                                        </p>
+                                                    </div>
+                                                    <div class="col my-auto"><div id="chartContainerSupport4" class="chart-container"></div>
+                                                </div>
+                                            </div>
+                                                <div class="pos" style="text-align: center;">
+                                                    <button class="vs-subview-prev"><i class="material-icons">keyboard_arrow_left</i></button>
+                                                    <!-- <button class="vs-subview-next"><i class="material-icons">keyboard_arrow_right</i></button> -->
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div vs-anchor="view-6" class="mainview view1 dark-primary-color">
+                    <div class="vs-center-wrap">
+                        <div class="vs-center" style="vertical-align: top;">
+                            <div class="text-primary-color" style="height: 100%;">
+                            <div style="height:75vh;margin-bottom:0;" class="row my-auto">
+                                <div style="margin:0 auto"><br>
+                                Conclusion
+                                </div>
+                                <br>
+                                <div class="container-content">
+                                <p style="font-size: medium;text-align:justify;">
+                                    Before generating this report, one of our Support engineers was connected to your system. An in depth check was made to ensure all components are properly functioning.<br>
+                                    <br>
+                                    The system health check was scheduled on March 2nd, 2020 and was completed on March 2nd, 2020.
+                                    <br><br>
+                                </p>
+                                <div class="row">
+                                    <div class="col" style="font-size: medium; text-align:justify">
+                                    <br>
+                                    While performing the health check critical issues that were affecting the system as well as some other minor issues were found and fixed. &nbsp;After finishing the system check, the engineer concluded:<br><br>
+                                    <q>is working<br />CC446867</q>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col" style="font-size: medium;text-align:center;">
+                                    The next health check is scheduled for March 2nd, 2021
+                                    </div>
+                                </div>
+                                </div>                                
+                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                    <div class="footer light-primary-color">
+                        <h6 class="mdc-typography--caption" style="margin-top: -2vh;"><img src="https://mircha.github.io/healthcheck/assets/img/ms.png"></h6>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+    
+    </html>
+    <script src="https://mircha.github.io/healthcheck/assets/viewscroller/jquery-3.1.0.min.js"></script>
+    <script src="https://mircha.github.io/healthcheck/assets/viewscroller/jquery.easing.min.js"></script>
+    <script src="https://mircha.github.io/healthcheck/assets/viewscroller/jquery.mousewheel.min.js"></script>
+    <script src="https://mircha.github.io/healthcheck/assets/viewscroller/viewScroller.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Sets viewScroller
+            $('.mainbag').viewScroller({
+                useScrollbar: false,
+                changeWhenAnim: false
+            });
+            options_bar.title.text='Assets monthly growth'
+            options_bar.data=[{
+                type: "column",
+                showInLegend: false,
+                toolTipContent: "<b>{name}</b>: (#percent%)",
+                indexLabel: "{y}",
+                color: "LightSeaGreen",
+                dataPoints:[
+                    { y: 2578195, label: "Apr-19"},
+                    { y: 2617565, label: "May-19"},
+                    { y: 2632347, label: "Jun-19"},
+                    { y: 2646634, label: "Jul-19"},
+                    { y: 2657685, label: "Aug-19"},
+                    { y: 2663156, label: "Sep-19"},
+                    { y: 2689774, label: "Oct-19"},
+                    { y: 2838649, label: "Nov-19"},
+                    { y: 3198954, label: "Dec-19"},
+                    { y: 3219702, label: "Jan-20"},
+                    { y: 3239760, label: "Feb-20"},
+                    { y: 3300121, label: "Mar-20"}
+                ]
+            }]
+            chartAssetsTime = new CanvasJS.Chart('chartContainerContent1', options_bar);chartAssetsTime.render();
+
+            options_bar.title.text='Instances monthly growth'
+            options_bar.data=[{
+                type: "column",
+                showInLegend: false,
+                toolTipContent: "<b>{name}</b>: (#percent%)",
+                indexLabel: "{y}",
+                color: "LightSeaGreen",
+                dataPoints:[
+                    { y: 3022071, label: "Apr-19"},
+                    { y: 3099427, label: "May-19"},
+                    { y: 3135602, label: "Jun-19"},
+                    { y: 3162432, label: "Jul-19"},
+                    { y: 3183157, label: "Aug-19"},
+                    { y: 3197129, label: "Sep-19"},
+                    { y: 3254623, label: "Oct-19"},
+                    { y: 3440482, label: "Nov-19"},
+                    { y: 3535212, label: "Dec-19"},
+                    { y: 3563503, label: "Jan-20"},
+                    { y: 3597628, label: "Feb-20"},
+                    { y: 3747321, label: "Mar-20"}
+                ]
+            }]
+
+            chartinstancesTime = new CanvasJS.Chart('chartContainerContent2', options_bar);chartinstancesTime.render();
+
+            options_bar.title.text='Instances on tape monthly growth'
+            options_bar.data=[{
+                type: "column",
+                showInLegend: false,
+                toolTipContent: "<b>{name}</b>: (#percent%)",
+                indexLabel: "{y}",
+                color: "LightSeaGreen",
+                dataPoints:[
+                    { y: 2532822, label: "Apr-19"},
+                    { y: 2577193, label: "May-19"},
+                    { y: 2604528, label: "Jun-19"},
+                    { y: 2628435, label: "Jul-19"},
+                    { y: 2644893, label: "Aug-19"},
+                    { y: 2656271, label: "Sep-19"},
+                    { y: 2675449, label: "Oct-19"},
+                    { y: 2706937, label: "Nov-19"},
+                    { y: 2729217, label: "Dec-19"},
+                    { y: 2745097, label: "Jan-20"},
+                    { y: 2766449, label: "Feb-20"},
+                    { y: 2803324, label: "Mar-20"}
+                ]
+            }]
+
+            chartTapesTime = new CanvasJS.Chart('chartContainerContent3', options_bar);chartTapesTime.render(); 
+            
+            
+            options_bar.title.text='Monthly case creation'
+            options_bar.data=[{
+                type: "column",
+                showInLegend: false,
+                toolTipContent: "<b>{name}</b>: (#percent%)",
+                indexLabel: "{y}",
+                color: "LightSeaGreen",
+                dataPoints:[{"y":6,"label":"April"},{"y":3,"label":"May"},{"y":7,"label":"June"},{"y":3,"label":"July"},{"y":3,"label":"August"},{"y":10,"label":"September"},{"y":5,"label":"October"},{"y":5,"label":"November"},{"y":6,"label":"December"},{"y":3,"label":"January"},{"y":9,"label":"February"},{"y":6,"label":"March"}]
+            }]
+            
+            chartSupportCasesOverTime = new CanvasJS.Chart('chartContainerSupport5', options_bar);chartSupportCasesOverTime.render();
+    
+            options_pie.title.text='Status';
+            options_pie.data=
+            [{type: "doughnut",
+            showInLegend: false,
+            toolTipContent: "<b>{name}</b>: (#percent%)",
+            indexLabel: "{name} - #percent%",
+            showInLegend: false,
+                dataPoints:
+                [
+                    {y:0, name:'Open'},
+                    {y:1, name:'In Progress'},
+                    {y:1, name:'Escalated'},
+                    {y:1, name:'In Engineering'},
+                    {y:6, name:'Wait for customer'},
+                    {y:6, name:'Wait for 3rd party'},
+                    {y:0, name:'Resolved'},
+                    {y:51, name:'Closed'},
+                ]
+            }]  
+            chartSupportStatus = new CanvasJS.Chart('chartContainerSupport1', options_pie);chartSupportStatus.render();
+
+            options_pie.title.text='Category';
+            options_pie.data=
+            [{type: "doughnut",
+            showInLegend: false,
+            toolTipContent: "<b>{name}</b>: (#percent%)",
+            indexLabel: "{name} - #percent%",
+            showInLegend: false,
+                dataPoints:
+                [
+                    {y:14, name:'Assist in using the system'},
+                    {y:11, name:'Assist in managing or modifying the system'},
+                    {y:19, name:'Remedial operation'},
+                    {y:2, name:'Upgrading and new versions'},
+                    {y:5, name:'Simple Workflows'},
+                    {y:6, name:'Known product issue (bug)'},
+                    {y:1, name:'New product issue (bug)'},
+                    {y:1, name:'Non-Masstech software issue'},
+                    {y:5, name:'Non-Masstech hardware issue'},
+                    {y:1, name:'System Maintenance'},
+                    {y:1, name:'Other'}                                                           
+                ]
+            }]
+            chartSupportCategory = new CanvasJS.Chart('chartContainerSupport6', options_pie);chartSupportCategory.render();
+
+            options_pie.title.text='Priority';
+            options_pie.data=
+            [{type: "doughnut",
+            showInLegend: false,
+            toolTipContent: "<b>{name}</b>: (#percent%)",
+            indexLabel: "{name} - #percent%",
+            showInLegend: false,
+                dataPoints:
+                [
+                    {y:13, name:'Low'},
+                    {y:25, name:'High'},
+                    {y:2, name:'Urgent'},
+                    {y:26, name:'Medium'},
+                ]
+            }]  
+            chartSupportPriority = new CanvasJS.Chart('chartContainerSupport2', options_pie);chartSupportPriority.render();
+    
+            options_pie.title.text='Reporting Channel';
+            options_pie.data=
+            [{type: "doughnut",
+            showInLegend: false,
+            toolTipContent: "<b>{name}</b>: (#percent%)",
+            indexLabel: "{name} - #percent%",
+            showInLegend: false,
+                dataPoints:
+                [
+                    {y:0, name:'System Notification'},
+                    {y:0, name:'Phone'},
+                    {y:62, name:'Email'},
+                    {y:0, name:'Chat'},
+                    {y:3, name:'Proactive'},
+                ]
+            }]
+            chartSupportChannel = new CanvasJS.Chart('chartContainerSupport4', options_pie);chartSupportChannel.render();
+
+            options_pie.title.text='SLA Performance';
+            options_pie.data=
+            [{type: "doughnut",
+            showInLegend: false,
+            toolTipContent: "<b>{name}</b>: (#percent%)",
+            indexLabel: "{name} - #percent%",
+            showInLegend: false,
+                dataPoints:
+                [
+                    {y:40, name:'Fullfilled', color:'LightSeaGreen'},
+                    {y:14, name:'Violated', color: 'salmon'},
+                    {y:12, name:'Running', color:'lightblue'}
+                ]
+            }]
+            chartSupportSLA = new CanvasJS.Chart('chartContainerSupport3', options_pie);chartSupportSLA.render();
+        })
+        var options_pie = {
+            theme: "dark2",
+            animationEnabled: true,
+            exportEnabled: false,
+            backgroundColor: 'transparent',
+            title: {
+                text: "Monthly Expense"
+            },
+            data: [{
+                type: "pie",
+                showInLegend: false,
+                toolTipContent: "<b>{name}</b>: (#percent%)",
+                indexLabel: "{name} - #percent%",
+                dataPoints: [
+                    { y: 450, name: "Food" },
+                    { y: 120, name: "Insurance" },
+                    { y: 300, name: "Traveling" },
+                    { y: 800, name: "Housing" },
+                    { y: 150, name: "Education" },
+                    { y: 150, name: "Shopping" },
+                    { y: 250, name: "Others" }
+                ]
+            }]
+        }
+        var options_bar = {
+            theme: "dark2",
+            animationEnabled: true,
+            exportEnabled: false,
+            backgroundColor: 'transparent',
+            title: {
+                text: "Monthly asset number"
+            },
+            data: [{
+                type: "column",
+                showInLegend: false,
+                toolTipContent: "<b>{name}</b>: (#percent%)",
+                indexLabel: "{y}",
+                color: "LightSeaGreen",
+                dataPoints: [
+                    { y: 450, label: "January"},
+                    { y: 500, label: "February"},
+                    { y: 700, label: "March"},
+                    { y: 705, label: "April"},
+                    { y: 800, label: "May"},
+                    { y: 900, label: "June"},
+                    { y: 1000, label: "July"},
+                    { y: 1200, label: "August"},
+                    { y: 1250, label: "September"},
+                    { y: 1300, label: "October"},
+                    { y: 1400, label: "November"},
+                    { y: 1500, label: "December"}
+                ]
+            }]
+        }
+        const drawer = mdc.drawer.MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
+        const topAppBar = mdc.topAppBar.MDCTopAppBar.attachTo(document.getElementById('app-bar'));
+        topAppBar.setScrollTarget(document.getElementById('main-content'));
+        topAppBar.listen('MDCTopAppBar:nav', () => {
+            drawer.open = !drawer.open;
+        });
+    </script>
+    
