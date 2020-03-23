@@ -96,7 +96,7 @@
                                                 </ol> 
                                             </p>
                                             <!-- <p style="font-size:medium">                                       
-                                                This report contains data recorded over the last year, from March 21st, 2019 to March 21st, 2020
+                                                This report contains data recorded over the last year, from March 23rd, 2019 to March 23rd, 2020
                                             </p> -->
                                             <p style="font-size:medium;font-weight: bold; width: 100%; margin-bottom: 0;">Navigating the report</p>
                                              <p style="font-size:medium;margin-bottom: 0;">
@@ -230,21 +230,35 @@
                                 <div vs-anchor="subview-b" class="subview subview-b">
                                     <div class="vs-center-wrap">
                                         <div class="vs-center">
-                                            <div style="margin:0 auto; width:90%; text-align:justify">
-                                                <div id="chartContainerContent1" class="chart-container"></div>
-                                                <div class="pos" style="text-align: center;">
-                                                    <button class="vs-subview-prev"><i class="material-icons">keyboard_arrow_left</i></button>
-                                                    <button class="vs-subview-next"><i class="material-icons">keyboard_arrow_right</i></button>
+                                        <div class="text-primary-color" style="margin:0 auto; width:90%; text-align:justify">
+                                        <div class="row">
+                                            <div class="col-2">
+                                                <p style="font-size:medium">#new instances monthly</p>
                                                 </div>
+                                            <div class="col">
+                                                <div id="chartContainerContent1" class="chart-container"></div>
                                             </div>
+                                        </div>
+                                        <div class="pos" style="text-align: center;">
+                                            <button class="vs-subview-prev"><i class="material-icons">keyboard_arrow_left</i></button>
+                                            <button class="vs-subview-next"><i class="material-icons">keyboard_arrow_right</i></button>
+                                        </div>
+                                    </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div vs-anchor="subview-c" class="subview subview-c">
                                     <div class="vs-center-wrap">
                                         <div class="vs-center">
-                                            <div style="margin:0 auto; width:90%; text-align:justify">
-                                                <div id="chartContainerContent2" class="chart-container"></div>
+                                            <div class="text-primary-color" style="margin:0 auto; width:90%; text-align:justify">
+                                                <div class="row">
+                                                    <div class="col-2">
+                                                        <p style="font-size:medium">#new instances monthly</p>
+                                                        </div>
+                                                    <div class="col">
+                                                        <div id="chartContainerContent2" class="chart-container"></div>
+                                                    </div>
+                                                </div>
                                                 <div class="pos" style="text-align: center;">
                                                     <button class="vs-subview-prev"><i class="material-icons">keyboard_arrow_left</i></button>
                                                     <button class="vs-subview-next"><i class="material-icons">keyboard_arrow_right</i></button>
@@ -661,18 +675,18 @@
                                                         <p style="font-size:medium">
                                                             <hX style="font-size:medium">Summary of cases over the last year</hX>
                                                             <ul style="font-size:small;list-style:none">
-                                                                <li>April - 6</li>
-                                                                <li>May - 3</li>
-                                                                <li>June - 7</li>
-                                                                <li>July - 3</li>
-                                                                <li>August - 3</li>
-                                                                <li>September - 10</li>
-                                                                <li>October - 5</li>
-                                                                <li>November - 5</li>
-                                                                <li>December - 6</li>
-                                                                <li>January - 3</li>
-                                                                <li>February - 9</li>
-                                                                <li>March - 5</li>
+                                                                <li>April - 6 new cases</li>
+                                                                <li>May - 3 new cases</li>
+                                                                <li>June - 7 new cases</li>
+                                                                <li>July - 3 new cases</li>
+                                                                <li>August - 3 new cases</li>
+                                                                <li>September - 10 new cases</li>
+                                                                <li>October - 5 new cases</li>
+                                                                <li>November - 5 new cases</li>
+                                                                <li>December - 6 new cases</li>
+                                                                <li>January - 3 new cases</li>
+                                                                <li>February - 9 new cases</li>
+                                                                <li>March - 5 new cases</li>
                                                             </ul>
                                                         </p>
                                                     </div>
@@ -892,10 +906,13 @@
                 changeWhenAnim: false
             });
             options_bar.title.text='Assets monthly growth'
+            options_bar.axisY={title:'Total Assets'}
             options_bar.data=[{
                 type: "column",
-                showInLegend: false,
-                toolTipContent: "<b>{name}</b>: (#percent%)",
+                showInLegend: true, 
+                legendMarkerColor: "white",
+                legendText: "Placeholder text - description of chart",
+                toolTipContent: "<b>{label}</b>: y",
                 indexLabel: "{y}",
                 color: "LightSeaGreen",
                 dataPoints:[
@@ -916,10 +933,13 @@
             chartAssetsTime = new CanvasJS.Chart('chartContainerContent1', options_bar);chartAssetsTime.render();
 
             options_bar.title.text='Instances monthly growth'
+            options_bar.axisY={title:'Total Instances'}
             options_bar.data=[{
                 type: "column",
-                showInLegend: false,
-                toolTipContent: "<b>{name}</b>: (#percent%)",
+                showInLegend: true, 
+                legendMarkerColor: "white",
+                legendText: "Placeholder text - description of chart",
+                toolTipContent: "<b>{label}</b>: y",
                 indexLabel: "{y}",
                 color: "LightSeaGreen",
                 dataPoints:[
@@ -941,10 +961,13 @@
             chartinstancesTime = new CanvasJS.Chart('chartContainerContent2', options_bar);chartinstancesTime.render();
 
             options_bar.title.text='Instances on tape monthly growth'
+            options_bar.axisY={title:'Total Tape Instances'}
             options_bar.data=[{
                 type: "column",
-                showInLegend: false,
-                toolTipContent: "<b>{name}</b>: (#percent%)",
+                showInLegend: true, 
+                legendMarkerColor: "white",
+                legendText: "Placeholder text - description of chart",
+                toolTipContent: "<b>{label}</b>: y",
                 indexLabel: "{y}",
                 color: "LightSeaGreen",
                 dataPoints:[
@@ -966,11 +989,12 @@
             chartTapesTime = new CanvasJS.Chart('chartContainerContent3', options_bar);chartTapesTime.render(); 
             
             
-            options_bar.title.text='Monthly case creation'
+            options_bar.title.text='New cases each month'
+            options_bar.axisY={title:'Number of Cases'}
             options_bar.data=[{
                 type: "column",
                 showInLegend: false,
-                toolTipContent: "<b>{name}</b>: (#percent%)",
+                toolTipContent: "<b>{label}</b>: {y} new cases",
                 indexLabel: "{y}",
                 color: "LightSeaGreen",
                 dataPoints:[{"y":6,"label":"April"},{"y":3,"label":"May"},{"y":7,"label":"June"},{"y":3,"label":"July"},{"y":3,"label":"August"},{"y":10,"label":"September"},{"y":5,"label":"October"},{"y":5,"label":"November"},{"y":6,"label":"December"},{"y":3,"label":"January"},{"y":9,"label":"February"},{"y":5,"label":"March"}]
@@ -1108,8 +1132,8 @@
             },
             data: [{
                 type: "column",
-                showInLegend: false,
-                toolTipContent: "<b>{name}</b>: (#percent%)",
+                showInLegend: true,
+                toolTipContent: "<b>{label}</b>: {y}",
                 indexLabel: "{y}",
                 color: "LightSeaGreen",
                 dataPoints: [
