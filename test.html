@@ -1056,7 +1056,7 @@
 
 <style>
     #app-bar{
-        transition: all 0.1s linear;
+        transition: all 0.1s cubic-bezier(0.4, 0, 1, 1);
         height: 300px;
         background: url('https://mircha.github.io/healthcheck/assets/img/header.jpg');
         background-position-y: -150px;
@@ -1065,7 +1065,7 @@
         padding-top: 237px;
     }
     #headerSummary{
-        background: rgba(255,255,255,0.33);
+        background: rgba(255,255,255,0.66);
         color: black;
     }
 </style>
@@ -1078,7 +1078,7 @@ if (containerHeight < scrollPosition) {
     //console.log('not visible');//headerSummary
     document.getElementById("app-bar").style.height = "300px";
     document.getElementById("app-bar").style.paddingTop = "237px";
-    document.getElementById("headerSummary").style.background = "rgba(255,255,255,0.33)";
+    document.getElementById("headerSummary").style.background = "rgba(255,255,255,0.66)";
     document.getElementById("headerSummary").style.color = "black";
     document.getElementById("test").style.color = "black";
     document.getElementById("ms").style.display = "none";
