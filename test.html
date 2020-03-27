@@ -14,7 +14,7 @@
     <script type="text/javascript" src="https://mircha.github.io/healthcheck/assets/viewscroller/canvasjs.min.js"></script>
     <link rel="stylesheet" href="https://mircha.github.io/healthcheck/assets/css/bootstrap-grid.min.css">
 </head>
-<body>
+<body style="background: #607D8B;">
     <aside class="mdc-drawer mdc-drawer--dismissible light-primary-color">
         <div class="mdc-drawer__content">
             <div class="mdc-list">
@@ -56,12 +56,24 @@
         </div>
     </aside>
         <div class="mdc-drawer-app-content">
-            <header class="mdc-top-app-bar app-bar dark-primary-color mdc-elevation--z1" id="app-bar">
+            <header class="mdc-top-app-bar app-bar dark-primary-color mdc-elevation--z1" id="app-bar" style="height: 300px;
+            background: url('https://mircha.github.io/healthcheck/assets/img/header.jpg');
+            background-position-y: -90px;
+            background-size: 100% 770px;
+            height: 300px;
+    padding-top: 237px;">
                 <div class="mdc-top-app-bar__row">
-                    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start" id="headerSummary" style="
+                    background: rgba(255,255,255,0.33);
+                    color: black;
+                ">
                         <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
-                            id="test">menu_open</button>
-                        <span class="mdc-top-app-bar__title">Service Summary Report</span>
+                            id="test" style="color:black">menu_open</button>
+                        <div class="row" style="width:100%">
+                            <div class="col my-auto"><span class="mdc-top-app-bar__title">Your System Review Report</span></div>
+                            <div class="col-1 my-auto" style="display: none" id="ms"><img src="https://mircha.github.io/healthcheck/assets/img/ms.png"></div>
+                        </div>
+                        
                     </section>
                 </div>
             </header>
@@ -69,24 +81,24 @@
                 <div class="mdc-top-app-bar--fixed-adjust">
                     <div class="mainbag">
                         <!-- first page -->
-                        <div vs-anchor="view-0" class="mainview view1 dark-primary-color">
+                        <div vs-anchor="view-0" class="mainview view1 dark-primary-color" style="margin-top:65px;" id="first-page">
                             <div class="vs-center-wrap">
                                 <div class="vs-center" style="vertical-align: top;">
-                                    <div class="dark-primary-color text-primary-color" style="height: 100%; background: #607D8B; margin-top:-64px;">
+                                    <div class="dark-primary-color text-primary-color" style="height: 100%; background: #607D8B;">
                                         <div style="height:100vh;margin-bottom:0;" class="row my-auto">
                                         <div style="margin:0 auto; width:90%; text-align:justify" class="row my-auto">
                                             <div style="margin:0 auto; width:100%; text-align: center;">
-                                                Overview of your Service Summary
+                                                <!-- Overview of your Service Summary -->
                                             </div>
-                                            <p style="font-size:medium;font-weight: bold; width: 100%; margin-bottom: 0;">Introduction</p>
+                                            <p style="font-size:medium;font-weight: normal; width: 100%; margin-bottom: 0;">Dear Masstech user</p>
                                             <p style="font-size:medium">                                       
                                                 Welcome to your annual Masstech system health report. We are delighted to provide this report to help you get the most out of your Masstech storage and content management system. 
-                                            <br><br>Each year we perform a proactive check-up for every customer who has a current support agreement.  This report is the result of your annual check-up. 
+                                            Each year we perform a proactive check-up for every customer who has a current support agreement.  This report is the result of your annual check-up. 
                                             <br><br>A Masstech engineer has connected into your system, performed a series of checks, gathered some helpful data and assessed whether there might be ways to enhance how the system runs. He or she has recorded any fine-tuning recommendations and logged any issues into our issue tracking system.
                                             </p>
                                             <p style="font-size:medium;margin: 0;">                                       
                                                 <hX style="font-size:medium; width: 100%;">The report is divided into the following sections:</hX>
-                                                <ol style="font-size:medium;width: 100%; margin-bottom: 0;">
+                                                <ol style="font-size:medium;width: 100%; margin-bottom: 0; margin-top:3px">
                                                     <li>SYSTEM SUMMARY: a brief description of your environment and support agreement.</li>
                                                     <li>CONTENT: An overview of the content assets you have and the growth this year.</li>
                                                     <li>HARDWARE: A summary of the libraries and servers that are used by your Masstech system.</li>
@@ -96,18 +108,23 @@
                                                 </ol> 
                                             </p>
                                             <!-- <p style="font-size:medium">                                       
-                                                This report contains data recorded over the last year, from March 23rd, 2019 to March 23rd, 2020
+                                                This report contains data recorded over the last year, from March 27th, 2019 to March 27th, 2020
                                             </p> -->
-                                            <p style="font-size:medium;font-weight: bold; width: 100%; margin-bottom: 0;">Navigating the report</p>
-                                             <p style="font-size:medium;margin-bottom: 0;">
+                                            <p style="font-size:medium;font-weight: normal; width: 100%; margin-bottom: 0;">Navigating the report</p>
+                                             <p style="font-size:medium;margin-bottom: 0; margin-top:3px">
                                                 Move up and down through the report for each new section. Use the keyboard.
                                                 Move left and right to see each page within each section. Use the keyboard or click right/left arrows.
                                                 You can open or collapse the menu with the icon on the top left of the screen.
                                             </p>
-                                            <p style="font-size:medium;font-weight: bold; width: 100%; margin-bottom: 0;">Feedback</p>
-                                             <p style="font-size:medium; margin-bottom: 0; ">
-                                                If you would like to clarify any of the information, or would like to discuss the findings, just let us know. Please email <a class="text-primary-color" style="font-size: medium;text-decoration: underline;" href="mailto:support@masstech.com">support@masstech.com</a>.
-                                                If you would like to see further information added to the health check, or have any more general comments, please let me know directly. I would be delighted to hear from you.
+                                            <p style="font-size:medium;font-weight: normal; width: 100%; margin-bottom: 0;">Feedback</p>
+                                             <p style="font-size:medium;margin-bottom: 0; margin-top:3px">
+                                                Move up and down through the report for each new section. Use the keyboard.
+                                                Move left and right to see each page within each section. Use the keyboard or click right/left arrows.
+                                                You can open or collapse the menu with the icon on the top left of the screen.
+                                            </p>
+                                            <p style="font-size:medium;font-weight: normal; width: 100%; margin-bottom: 0;">Privacy</p>
+                                             <p style="font-size:medium; margin-bottom: 0; margin-top:3px">
+                                                    The data that we collect during these reviews is only used for internal purposes by Masstech, and none of your data will be shared with anybody outside of Masstech. In addition, we do not capture any details regarding actual content, such as file names. If you have any concerns or questions, please direct them to me.
                                                 <br><br>Sincerely,<br>
                                                 Lee Sheppard, VP of customer services. <a class="text-primary-color" style="font-size: medium;text-decoration: underline;" href="mailto:Lee.sheppard@masstech.com">Lee.sheppard@masstech.com</a>
                                             </p>
@@ -230,11 +247,25 @@
                                 <div vs-anchor="subview-b" class="subview subview-b">
                                     <div class="vs-center-wrap">
                                         <div class="vs-center">
-                                        <div class="text-primary-color" style="margin:0 auto; width:90%; text-align:justify">
+                                        <div class="text-primary-color" style="margin:0 auto; width:95%; text-align:left">
                                         <div class="row">
-                                            <div class="col-2">
-                                                <p style="font-size:medium">#new instances monthly</p>
-                                                </div>
+                                            <div class="col-2 my-auto">
+                                                <hX style="font-size:medium">New assets monthly growth</hX>
+                                                <ul style="font-size:small; list-style:none">
+                                                    <li>April, 2019: 36,588</li>
+                                                    <li>May, 2019: 39,370</li>
+                                                    <li>June, 2019: 14,782</li>
+                                                    <li>July, 2019: 14,287</li>
+                                                    <li>August, 2019: 11,051</li>
+                                                    <li>September, 2019: 5,471</li>
+                                                    <li>October, 2019: 26,618</li>
+                                                    <li>November, 2019: 148,875</li>
+                                                    <li>December, 2019: 360,305</li>
+                                                    <li>January, 2020: 20,748</li>
+                                                    <li>February, 2020: 20,058</li>
+                                                    <li>March, 2020: 60,361</li>
+                                                </ul>
+                                            </div>
                                             <div class="col">
                                                 <div id="chartContainerContent1" class="chart-container"></div>
                                             </div>
@@ -250,11 +281,25 @@
                                 <div vs-anchor="subview-c" class="subview subview-c">
                                     <div class="vs-center-wrap">
                                         <div class="vs-center">
-                                            <div class="text-primary-color" style="margin:0 auto; width:90%; text-align:justify">
+                                            <div class="text-primary-color" style="margin:0 auto; width:95%; text-align:left">
                                                 <div class="row">
-                                                    <div class="col-2">
-                                                        <p style="font-size:medium">#new instances monthly</p>
-                                                        </div>
+                                                    <div class="col-2 my-auto">
+                                                        <hX style="font-size:medium">New instances monthly growth</hX>
+                                                        <ul style="font-size:small; list-style:none">
+                                                            <li>April, 2019: 47,574</li>
+                                                            <li>May, 2019: 77,356</li>
+                                                            <li>June, 2019: 36,175</li>
+                                                            <li>July, 2019: 26,830</li>
+                                                            <li>August, 2019: 20,725</li>
+                                                            <li>September, 2019: 13,972</li>
+                                                            <li>October, 2019: 57,494</li>
+                                                            <li>November, 2019: 185,859</li>
+                                                            <li>December, 2019: 94,730</li>
+                                                            <li>January, 2020: 28,291</li>
+                                                            <li>February, 2020: 34,125</li>
+                                                            <li>March, 2020: 149,693</li>
+                                                        </ul>
+                                                    </div>
                                                     <div class="col">
                                                         <div id="chartContainerContent2" class="chart-container"></div>
                                                     </div>
@@ -270,8 +315,29 @@
                                 <div vs-anchor="subview-ac" class="subview subview-ac">
                                     <div class="vs-center-wrap">
                                         <div class="vs-center">
-                                            <div style="margin:0 auto; width:90%; text-align:justify">
-                                                <div id="chartContainerContent3" class="chart-container"></div>
+                                            <div class="text-primary-color" style="margin:0 auto; width:97%; text-align:left">
+                                                <div class="row">
+                                                    <div class="col-2 my-auto">
+                                                        <hX style="font-size:medium">Tape instances monthly growth</hX>
+                                                        <ul style="font-size:small; list-style:none">
+                                                            <li>April, 2019: 40,604</li>
+                                                            <li>May, 2019: 44,371</li>
+                                                            <li>June, 2019: 27,335</li>
+                                                            <li>July, 2019: 23,907</li>
+                                                            <li>August, 2019: 16,458</li>
+                                                            <li>September, 2019: 11,378</li>
+                                                            <li>October, 2019: 19,178</li>
+                                                            <li>November, 2019: 31,488</li>
+                                                            <li>December, 2019: 22,280</li>
+                                                            <li>January, 2020: 15,880</li>
+                                                            <li>February, 2020: 21,352</li>
+                                                            <li>March, 2020: 36,875</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div id="chartContainerContent3" class="chart-container"></div>
+                                                    </div>
+                                                </div>
                                                 <div class="pos" style="text-align: center;">
                                                     <button class="vs-subview-prev"><i class="material-icons">keyboard_arrow_left</i></button>
                                                 </div>
@@ -588,7 +654,7 @@
                                                 <br>
                                                 <div style="margin:0 auto; width:90%; text-align:center">
                                                     <p style="font-size: medium;">
-                                                        There are 10 operations done on this system overall : 6 software upgrades and 4 applying of patches.<br>
+                                                        There are 10 operations done on this system overall: 6 software upgrades and 4 applying of patches.<br>
                                                         During the last year, there were 2 operations made: 2 software upgrades and 0 applying of patches.
                                                         <br><br>
                                                     </p>
@@ -596,20 +662,121 @@
                                                             <div class="col-1"></div>
                                                             <div class="col">
                                                                 <div class="row">
-                                                                    <div class="col" style="text-align:right">The latest Application upgrade:</div><div class="col" style="text-align:left">from version 8.2.2.3 to version 8.2.3 on November 8th, 2019</div>
+                                                                    <div class="col" style="text-align:right">The latest Application upgrade:</div><div class="col" style="text-align:left">From version 8.2.2.3 to version 8.2.3 on November 8th, 2019</div>
                                                                 </div>
                                                                 <div class="row">
-                                                                    <div class="col" style="text-align:right">The latest Transcode Engine upgrade:</div><div class="col" style="text-align:left">none in the last year</div>
+                                                                    <div class="col" style="text-align:right">The latest Transcode Engine upgrade:</div><div class="col" style="text-align:left">From version 1.14.1.0 to version 1.14.3.0 on February 27th, 2018</div>
                                                                 </div>
                                                                 <div class="row">
-                                                                    <div class="col" style="text-align:right">The latest Workflow Engine upgrade:</div><div class="col" style="text-align:left">none in the last year</div>
+                                                                    <div class="col" style="text-align:right">The latest Workflow Engine upgrade:</div><div class="col" style="text-align:left">Detail not available</div>
                                                                 </div>
                                                                 <div class="row">
-                                                                    <div class="col" style="text-align:right">The latest Apache Tomcat upgrade:</div><div class="col" style="text-align:left">none in the last year</div>
+                                                                    <div class="col" style="text-align:right">The latest Apache Tomcat upgrade:</div><div class="col" style="text-align:left">From version 8.0.43 to version 8.5 on February 4th, 2019</div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-1"></div>
                                                         </div>
+                                                        <br>
+                                                        
+    <div class="row dark-primary-color" style="font-size:small;text-align:left;">
+        <div class="col">Type</div>
+        <div class="col">Date</div>
+        <div class="col">Application</div>
+        <div class="col">Transcode</div>
+        <div class="col">WFE</div>
+        <div class="col">Tomcat</div>
+    </div>
+
+            <div class="row accent-color" style="font-size:small;text-align:left;">
+                <div class="col">Patch</div>
+                <div class="col">December 11th, 2017</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+            </div>
+        
+            <div class="row" style="font-size:small;text-align:left;">
+                <div class="col">Patch</div>
+                <div class="col">January 18th, 2018</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+            </div>
+        
+            <div class="row accent-color" style="font-size:small;text-align:left;">
+                <div class="col">Upgrade</div>
+                <div class="col">January 23rd, 2018</div>
+                <div class="col">-</div>
+                <div class="col">1.13.1.9 to 1.14.1</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+            </div>
+        
+            <div class="row" style="font-size:small;text-align:left;">
+                <div class="col">Patch</div>
+                <div class="col">February 1st, 2018</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+            </div>
+        
+            <div class="row accent-color" style="font-size:small;text-align:left;">
+                <div class="col">Upgrade</div>
+                <div class="col">February 27th, 2018</div>
+                <div class="col">-</div>
+                <div class="col">1.14.1.0 to 1.14.3.0</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+            </div>
+        
+            <div class="row" style="font-size:small;text-align:left;">
+                <div class="col">Upgrade</div>
+                <div class="col">March 12th, 2018</div>
+                <div class="col">8.1.1.6 to 8.1.2.3</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+            </div>
+        
+            <div class="row accent-color" style="font-size:small;text-align:left;">
+                <div class="col">Upgrade</div>
+                <div class="col">February 4th, 2019</div>
+                <div class="col">8.1.2.3 to 8.2.1.7</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+                <div class="col">8.0.43 to 8.5</div>
+            </div>
+        
+            <div class="row" style="font-size:small;text-align:left;">
+                <div class="col">Patch</div>
+                <div class="col">March 11th, 2019</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+            </div>
+        
+            <div class="row accent-color" style="font-size:small;text-align:left;">
+                <div class="col">Upgrade</div>
+                <div class="col">September 18th, 2019</div>
+                <div class="col">8.1.2.7 to 8.2.2.3</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+            </div>
+        
+            <div class="row" style="font-size:small;text-align:left;">
+                <div class="col">Upgrade</div>
+                <div class="col">November 8th, 2019</div>
+                <div class="col">8.2.2.3 to 8.2.3</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+                <div class="col">-</div>
+            </div>
+        
                                                 </div>
                                             </div>
                                                 <div class="pos" style="text-align: center;">
@@ -637,7 +804,7 @@
                                                     <div class="container-content">
                                                         <p style="font-size: medium;text-align:center;">
                                                             This section contains key metrics taken from our ticketing system. 
-                                                            We have logged into our system 185 cases in total, last year's case count being 65
+                                                            We have logged into our system 187 cases in total, last year's case count being 66
                                                             <br><br>
                                                         </p>
                                                         <div class="row">
@@ -686,7 +853,7 @@
                                                                 <li>December - 6 new cases</li>
                                                                 <li>January - 3 new cases</li>
                                                                 <li>February - 9 new cases</li>
-                                                                <li>March - 5 new cases</li>
+                                                                <li>March - 6 new cases</li>
                                                             </ul>
                                                         </p>
                                                     </div>
@@ -717,10 +884,10 @@
                                                                 <li>In Progress - 1</li>
                                                                 <li>Escalated - 1</li>
                                                                 <li>In Engineering - 1</li>
-                                                                <li>Wait for customer - 5</li>
+                                                                <li>Wait for customer - 7</li>
                                                                 <li>Wait for 3rd party - 6</li>
-                                                                <li>Resolved - 2*</li>
-                                                                <li>Closed - 49</li>
+                                                                <li>Resolved - 0*</li>
+                                                                <li>Closed - 50</li>
                                                             </ul>
                                                             <p style="font-size:small;">*The status Resolved means that the issue has been resolved from our point of view,
                                                              but we will wait 5 days in case there is a reply on the same issue. After 5 days the case is set to status Closed</p>
@@ -758,13 +925,13 @@
                                                 <ul style="font-size:small;list-style:none">
                                                     <li>Urgent - 3</li>
                                                     <li>High - 25</li>
-                                                    <li>Medium - 25</li>
-                                                    <li>Low - 12</li>
+                                                    <li>Medium - 24</li>
+                                                    <li>Low - 14</li>
                                                 </ul>
                                                 <hX style="font-size:medium;">SLA Performance</hX>
                                                 <ul style="font-size:small;list-style:none">
-                                                    <li>Fulfilled - 40</li>
-                                                    <li>Running - 11</li>
+                                                    <li>Fulfilled - 39</li>
+                                                    <li>Running - 13</li>
                                                     <li>Violated - 14</li>
                                                 </ul>                                                
                                                 </p>
@@ -791,7 +958,7 @@
                                                         <hX style="font-size:medium">Status of cases</hX>
                                                         <ul style="font-size:small;list-style:none">
                                                             <li>Assist in using the system - 14</li>
-                                                            <li>Assist in managing or modifying the system - 11</li>
+                                                            <li>Assist in managing or modifying the system - 13</li>
                                                             <li>Remedial operation - 20</li>
                                                             <li>Upgrading and new versions - 2</li>
                                                             <li>Simple Workflows - 4</li>
@@ -799,7 +966,7 @@
                                                             <li>New product issue (bug) - 1</li>
                                                             <li>Non-Masstech software issue - 1</li>
                                                             <li>Non-Masstech hardware issue - 4</li>
-                                                            <li>System Maintenance - 1</li>
+                                                            <li>System Maintenance - 0</li>
                                                             <li>Other - 1</li>
                                                         </ul>
                                                     </p>
@@ -824,7 +991,7 @@
                                                         <p style="font-size:medium">
                                                             <hX style="font-size:medium">How cases are being reported</hX>
                                                             <ul style="font-size:small;list-style:none">
-                                                                <li>Email - 61</li>
+                                                                <li>Email - 62</li>
                                                                 <li>Phone - 0</li>
                                                                 <li>Chat - 0</li>
                                                                 <li>Proactive - 3</li>
@@ -884,9 +1051,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer light-primary-color" style="height: 48px; padding-top: 3px;">
+                <!--<div class="footer light-primary-color" style="height: 48px; padding-top: 3px;">
                         <img src="https://mircha.github.io/healthcheck/assets/img/ms.png">
-                </div>
+                </div>-->
             </main>
         </div>
 </body>
@@ -895,25 +1062,60 @@
 <script src="https://mircha.github.io/healthcheck/assets/viewscroller/jquery.easing.min.js"></script>
 <script src="https://mircha.github.io/healthcheck/assets/viewscroller/jquery.mousewheel.min.js"></script>
 <script src="https://mircha.github.io/healthcheck/assets/viewscroller/viewScroller.js"></script>
+
+<style>
+    #app-bar{
+        transition: all 0.1s linear;
+    }
+</style>
     <script>
+
+function test() {
+var container = $('#app-bar');
+var containerHeight = container.height();
+var scrollPosition = $('#first-page').offset().top - container.offset().top;
+if (containerHeight < scrollPosition) {
+    //console.log('not visible');//headerSummary
+    document.getElementById("app-bar").style.height = "300px";
+    document.getElementById("app-bar").style.paddingTop = "237px";
+    document.getElementById("headerSummary").style.background = "rgba(255,255,255,0.33)";
+    document.getElementById("headerSummary").style.color = "black";
+    document.getElementById("test").style.color = "black";
+    document.getElementById("ms").style.display = "none";
+} else {
+    //console.log('visible');
+    document.getElementById("app-bar").style.height = "64px";
+    document.getElementById("app-bar").style.paddingTop = "0";
+    document.getElementById("headerSummary").style.color = "white";
+    document.getElementById("headerSummary").style.backgroundColor = "#455A64";
+    document.getElementById("test").style.color = "white"
+    document.getElementById("ms").style.display = "block";
+}
+}
     $(function() {
         $('body').mousedown(function(e){if(e.button==1)return false});
     });
         $(document).ready(function () {
+            window.onscroll = function() {scrollFunction();};
             // Sets viewScroller
             $('.mainbag').viewScroller({
                 useScrollbar: false,
-                changeWhenAnim: false
+                changeWhenAnim: false,
+                afterChange: function() {
+                    test()
+	}
             });
-            options_bar.title.text='Assets monthly growth'
+            options_bar.title.text='Masstech Managed Assets'
             options_bar.axisY={title:'Total Assets'}
+            options_bar.legend={fontWeight:'lighter'}
             options_bar.data=[{
                 type: "column",
                 showInLegend: true, 
                 legendMarkerColor: "white",
-                legendText: "Placeholder text - description of chart",
-                toolTipContent: "<b>{label}</b>: y",
-                indexLabel: "{y}",
+                legendMarkerType: "none",
+                legendText: "This chart presents the overall total number of assets managed by your Masstech system over the last 12 months. The monthly asset growth is presented in the list",
+                toolTipContent: "<b>{label}</b>: {y}",
+                /*indexLabel: "{y}",*/
                 color: "LightSeaGreen",
                 dataPoints:[
                     { y: 2578195, label: "Apr-19"},
@@ -932,15 +1134,17 @@
             }]
             chartAssetsTime = new CanvasJS.Chart('chartContainerContent1', options_bar);chartAssetsTime.render();
 
-            options_bar.title.text='Instances monthly growth'
+            options_bar.title.text='Masstech Managed Instances'
             options_bar.axisY={title:'Total Instances'}
+            options_bar.legend={fontWeight:'lighter'}
             options_bar.data=[{
                 type: "column",
                 showInLegend: true, 
                 legendMarkerColor: "white",
-                legendText: "Placeholder text - description of chart",
-                toolTipContent: "<b>{label}</b>: y",
-                indexLabel: "{y}",
+                legendMarkerType: "none",
+                legendText: "This chart presents the overall total number of instances, including cache, tape and all storage locations and both low and high resolution files. The monthly instances growth is presented in the list.",
+                toolTipContent: "<b>{label}</b>: {y}",
+                /*indexLabel: "{y}",*/
                 color: "LightSeaGreen",
                 dataPoints:[
                     { y: 3022071, label: "Apr-19"},
@@ -960,15 +1164,17 @@
 
             chartinstancesTime = new CanvasJS.Chart('chartContainerContent2', options_bar);chartinstancesTime.render();
 
-            options_bar.title.text='Instances on tape monthly growth'
+            options_bar.title.text='Masstech Managed Tape Instances'
             options_bar.axisY={title:'Total Tape Instances'}
+            options_bar.legend={fontWeight:'lighter'}
             options_bar.data=[{
                 type: "column",
                 showInLegend: true, 
                 legendMarkerColor: "white",
-                legendText: "Placeholder text - description of chart",
-                toolTipContent: "<b>{label}</b>: y",
-                indexLabel: "{y}",
+                legendMarkerType: "none",
+                legendText: "This chart presents the overall total number of instances that are located on tapes, counting all tape instances of an asset. The monthly tape instances growth is presented in the list.",
+                toolTipContent: "<b>{label}</b>: {y}",
+                /*indexLabel: "{y}",*/
                 color: "LightSeaGreen",
                 dataPoints:[
                     { y: 2532822, label: "Apr-19"},
@@ -997,7 +1203,7 @@
                 toolTipContent: "<b>{label}</b>: {y} new cases",
                 indexLabel: "{y}",
                 color: "LightSeaGreen",
-                dataPoints:[{"y":6,"label":"April"},{"y":3,"label":"May"},{"y":7,"label":"June"},{"y":3,"label":"July"},{"y":3,"label":"August"},{"y":10,"label":"September"},{"y":5,"label":"October"},{"y":5,"label":"November"},{"y":6,"label":"December"},{"y":3,"label":"January"},{"y":9,"label":"February"},{"y":5,"label":"March"}]
+                dataPoints:[{"y":6,"label":"April"},{"y":3,"label":"May"},{"y":7,"label":"June"},{"y":3,"label":"July"},{"y":3,"label":"August"},{"y":10,"label":"September"},{"y":5,"label":"October"},{"y":5,"label":"November"},{"y":6,"label":"December"},{"y":3,"label":"January"},{"y":9,"label":"February"},{"y":6,"label":"March"}]
             }]
             
             chartSupportCasesOverTime = new CanvasJS.Chart('chartContainerSupport5', options_bar);chartSupportCasesOverTime.render();
@@ -1015,10 +1221,10 @@
                     {y:1, name:'In Progress'},
                     {y:1, name:'Escalated'},
                     {y:1, name:'In Engineering'},
-                    {y:5, name:'Wait for customer'},
+                    {y:7, name:'Wait for customer'},
                     {y:6, name:'Wait for 3rd party'},
-                    {y:2, name:'Resolved'},
-                    {y:49, name:'Closed'},
+                    {y:0, name:'Resolved'},
+                    {y:50, name:'Closed'},
                 ]
             }]  
             chartSupportStatus = new CanvasJS.Chart('chartContainerSupport1', options_pie);chartSupportStatus.render();
@@ -1033,7 +1239,7 @@
                 dataPoints:
                 [
                     {y:14, name:'Assist in using the system'},
-                    {y:11, name:'Assist in managing or modifying the system'},
+                    {y:13, name:'Assist in managing or modifying the system'},
                     {y:20, name:'Remedial operation'},
                     {y:2, name:'Upgrading and new versions'},
                     {y:4, name:'Simple Workflows'},
@@ -1041,7 +1247,7 @@
                     {y:1, name:'New product issue (bug)'},
                     {y:1, name:'Non-Masstech software issue'},
                     {y:4, name:'Non-Masstech hardware issue'},
-                    {y:1, name:'System Maintenance'},
+                    {y:0, name:'System Maintenance'},
                     {y:1, name:'Other'}                                                           
                 ]
             }]
@@ -1056,10 +1262,10 @@
             showInLegend: false,
                 dataPoints:
                 [
-                    {y:12, name:'Low'},
+                    {y:14, name:'Low'},
                     {y:25, name:'High'},
                     {y:3, name:'Urgent'},
-                    {y:25, name:'Medium'},
+                    {y:24, name:'Medium'},
                 ]
             }]  
             chartSupportPriority = new CanvasJS.Chart('chartContainerSupport2', options_pie);chartSupportPriority.render();
@@ -1075,7 +1281,7 @@
                 [
                     {y:0, name:'System Notification'},
                     {y:0, name:'Phone'},
-                    {y:61, name:'Email'},
+                    {y:62, name:'Email'},
                     {y:0, name:'Chat'},
                     {y:3, name:'Proactive'},
                 ]
@@ -1091,9 +1297,9 @@
             showInLegend: false,
                 dataPoints:
                 [
-                    {y:40, name:'Fullfilled', color:'LightSeaGreen'},
+                    {y:39, name:'Fullfilled', color:'LightSeaGreen'},
                     {y:14, name:'Violated', color: 'salmon'},
-                    {y:11, name:'Running', color:'lightblue'}
+                    {y:13, name:'Running', color:'lightblue'}
                 ]
             }]
             chartSupportSLA = new CanvasJS.Chart('chartContainerSupport3', options_pie);chartSupportSLA.render();
@@ -1158,5 +1364,6 @@
         topAppBar.listen('MDCTopAppBar:nav', () => {
             drawer.open = !drawer.open;
         });
+        
     </script>
     
