@@ -56,17 +56,9 @@
         </div>
     </aside>
         <div class="mdc-drawer-app-content">
-            <header class="mdc-top-app-bar app-bar dark-primary-color mdc-elevation--z1" id="app-bar" style="height: 300px;
-            background: url('https://mircha.github.io/healthcheck/assets/img/header.jpg');
-            background-position-y: -90px;
-            background-size: 100% 770px;
-            height: 300px;
-    padding-top: 237px;">
+            <header class="mdc-top-app-bar app-bar dark-primary-color mdc-elevation--z1" id="app-bar">
                 <div class="mdc-top-app-bar__row">
-                    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start" id="headerSummary" style="
-                    background: rgba(255,255,255,0.33);
-                    color: black;
-                ">
+                    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start" id="headerSummary">
                         <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
                             id="test" style="color:black">menu_open</button>
                         <div class="row" style="width:100%">
@@ -1065,10 +1057,19 @@
 <style>
     #app-bar{
         transition: all 0.1s linear;
+        height: 300px;
+        background: url('https://mircha.github.io/healthcheck/assets/img/header.jpg');
+        background-position-y: -150px;
+        background-size: 100% 1000px;
+        height: 300px;
+        padding-top: 237px;
+    }
+    #headerSummary{
+        background: rgba(255,255,255,0.33);
+        color: black;
     }
 </style>
-    <script>
-
+<script>
 function test() {
 var container = $('#app-bar');
 var containerHeight = container.height();
