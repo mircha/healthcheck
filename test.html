@@ -58,7 +58,7 @@
         <div class="mdc-drawer-app-content">
             <header class="mdc-top-app-bar app-bar dark-primary-color mdc-elevation--z1" id="app-bar">
             <div id ="headContainer"><img id="head" src="https://mircha.github.io/healthcheck/assets/img/header.jpg" style="width:87%"></div>
-            <div  style="width:100%; position: absolute;top: 5%;left: 75%;" id="mslogo"><img src="https://mircha.github.io/healthcheck/assets/img/ms-logo.png" style="width: 300px"></div>
+            <div id="mslogo"><img id="mslogoPic" src="https://mircha.github.io/healthcheck/assets/img/ms-logo.png" style="width: 300px"></div>
                 <div class="mdc-top-app-bar__row">
                     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start" id="headerSummary">
                         <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" id="test" style="color:black">menu_open</button>
@@ -1139,22 +1139,35 @@
             font-size: small!important;
         }
     }
-    @media only screen and (max-width: 1200px){
+    @media only screen and (max-width: 1280px){
         #head{
-            width:95%
+            width:95%!important
         }
         #headContainer{
-            top:-120;
-            height:420px;
+            top:-120px!important;
+            height:420px!important;
+        }
+        #mslogo{
+            top: 20%!important;
+            left: 78%!important;
+        }
+        #mslogoPic{
+            width:200px!important;
         }
     }
     @media only screen and (max-width: 1024px){
         #head{
-            width:100%
+            width:100%!important
         }
         #headContainer{
-            top:-70;
-            height:370px;
+            top:-70px!important;
+            height:370px!important;
+        }
+        #mslogo{
+            top: 15%!important;
+        }
+        #mslogoPic{
+            width:200px!important;
         }
     }
     #app-bar{
@@ -1175,6 +1188,12 @@
         top:-160px;left:0; 
         height: 460px; 
         overflow-y: hidden
+    }
+    #mslogo{
+        width:100%; 
+        position: absolute;
+        top: 5%;
+        left: 75%;
     }
 </style>
 
