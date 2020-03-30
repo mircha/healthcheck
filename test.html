@@ -57,7 +57,7 @@
     </aside>
         <div class="mdc-drawer-app-content">
             <header class="mdc-top-app-bar app-bar dark-primary-color mdc-elevation--z1" id="app-bar">
-            <div style="position: absolute; top:-160px;left:0; height: 460px; overflow-y: hidden"><img id="head" src="https://mircha.github.io/healthcheck/assets/img/header.jpg" style="width:87%"></div>
+            <div id ="headContainer"><img id="head" src="https://mircha.github.io/healthcheck/assets/img/header.jpg" style="width:87%"></div>
             <div  style="width:100%; position: absolute;top: 5%;left: 75%;" id="mslogo"><img src="https://mircha.github.io/healthcheck/assets/img/ms-logo.png" style="width: 300px"></div>
                 <div class="mdc-top-app-bar__row">
                     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start" id="headerSummary">
@@ -1139,6 +1139,24 @@
             font-size: small!important;
         }
     }
+    @media only screen and (max-width: 1200px){
+        #head{
+            width:95%
+        }
+        #headContainer{
+            top:-120;
+            height:420px;
+        }
+    }
+    @media only screen and (max-width: 1024px){
+        #head{
+            width:100%
+        }
+        #headContainer{
+            top:-70;
+            height:370px;
+        }
+    }
     #app-bar{
         transition: all 0.1s cubic-bezier(0.4, 0, 1, 1);
         height: 300px;
@@ -1151,6 +1169,12 @@
     #headerSummary{
         background: rgba(255,255,255,0.66);
         color: black;
+    }
+    #headContainer{
+        position: absolute; 
+        top:-160px;left:0; 
+        height: 460px; 
+        overflow-y: hidden
     }
 </style>
 
