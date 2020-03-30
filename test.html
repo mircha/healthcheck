@@ -57,15 +57,15 @@
     </aside>
         <div class="mdc-drawer-app-content">
             <header class="mdc-top-app-bar app-bar dark-primary-color mdc-elevation--z1" id="app-bar">
+            <div style="position: absolute; top:-160px;left:0; height: 460px; overflow-y: hidden"><img id="head" src="https://mircha.github.io/healthcheck/assets/img/header.jpg" style="width:87%"></div>
+            <div  style="width:100%; position: absolute;top: 5%;left: 75%;" id="mslogo"><img src="https://mircha.github.io/healthcheck/assets/img/ms-logo.png" style="width: 300px"></div>
                 <div class="mdc-top-app-bar__row">
                     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start" id="headerSummary">
-                        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
-                            id="test" style="color:black">menu_open</button>
-                        <div class="row" style="width:100%">
+                        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" id="test" style="color:black">menu_open</button>
+                        <div class="row" style="width:99%">
                             <div class="col my-auto"><span class="mdc-top-app-bar__title">Your System Review Report</span></div>
                             <div class="col-1 my-auto" style="display: none" id="ms"><img src="https://mircha.github.io/healthcheck/assets/img/ms.png"></div>
                         </div>
-                        
                     </section>
                 </div>
             </header>
@@ -80,7 +80,7 @@
                                         <div style="height:100vh;margin-bottom:0;" class="row my-auto">
                                         <div style="margin:0 auto; width:90%; text-align:justify" class="row my-auto">
                                             <div style="margin:0 auto; width:100%; text-align: center;">
-                                                <!-- Overview of your Service Summary -->
+                                                <!--Overview of your Service Summary-->
                                             </div>
                                             <p style="font-size:medium;font-weight: normal; width: 100%; margin-bottom: 0;">Dear Masstech user</p>
                                             <p style="font-size:medium">                                       
@@ -100,7 +100,7 @@
                                                 </ol> 
                                             </p>
                                             <!-- <p style="font-size:medium">                                       
-                                                This report contains data recorded over the last year, from March 27th, 2019 to March 27th, 2020
+                                                This report contains data recorded over the last year, from March 30th, 2019 to March 30th, 2020
                                             </p> -->
                                             <p style="font-size:medium;font-weight: normal; width: 100%; margin-bottom: 0;">Navigating the report</p>
                                              <p style="font-size:medium;margin-bottom: 0; margin-top:3px">
@@ -108,14 +108,14 @@
                                                 Move left and right to see each page within each section. Use the keyboard or click right/left arrows.
                                                 You can open or collapse the menu with the icon on the top left of the screen.
                                             </p>
-                                            <p style="font-size:medium;font-weight: normal; width: 100%; margin-bottom: 0;">Feedback</p>
+                                            <!--<p style="font-size:medium;font-weight: normal; width: 100%; margin-bottom: 0;">Feedback</p>
                                              <p style="font-size:medium;margin-bottom: 0; margin-top:3px">
                                                     If you would like to clarify any of the information, or would like to discuss the findings, just let us know. Please email <a class="text-primary-color" style="font-size: medium;text-decoration: underline;" href="mailto:support@masstech.com">support@masstech.com</a>.
                                                     If you would like to see further information added to the health check, or have any more general comments, please let me know directly. I would be delighted to hear from you.
-                                            </p>
-                                            <p style="font-size:medium;font-weight: normal; width: 100%; margin-bottom: 0;">Privacy</p>
+                                            </p>-->
+                                            <p style="font-size:medium;font-weight: normal; width: 100%; margin-bottom: 0;">Privacy & Feedback</p>
                                              <p style="font-size:medium; margin-bottom: 0; margin-top:3px">
-                                                    The data that we collect during these reviews is only used for internal purposes by Masstech, and none of your data will be shared with anybody outside of Masstech. In addition, we do not capture any details regarding actual content, such as file names. If you have any concerns or questions, please direct them to me.
+                                                    The data that we collect during these reviews is only used for internal purposes by Masstech, and none of your data will be shared with anybody outside of Masstech. In addition, we do not capture any details regarding actual content, such as file names. If you have any concerns or questions, please direct them to me.If you would like to see further information added to the health check, or have any more general comments, please let me know directly. I would be delighted to hear from you.
                                                 <br><br>Sincerely,<br>
                                                 Lee Sheppard, VP of customer services. <a class="text-primary-color" style="font-size: medium;text-decoration: underline;" href="mailto:Lee.sheppard@masstech.com">Lee.sheppard@masstech.com</a>
                                             </p>
@@ -138,29 +138,76 @@
                                 <div class="vs-center" style="vertical-align: top;">
                                     <div class="text-primary-color" style="height: 100%;">
                                         <div style="height:75vh;margin-bottom:0;" class="row my-auto">
-                                            <div style="margin:0 auto;width: 100%;">
+                                            <div style="margin:0 auto;width: 90%; text-align:center">
                                                 <br>
                                                 System Summary
+                                                <p style="font-size: medium!important;text-align:center">
+                                                    These system summary data are taken from both the remote session and the current records.
+                                                </p>
                                             </div>
+                                            <div style="margin:0 auto; width: 90%;text-align:left; font-size:medium">
                                             <br>
-                                            <div style="margin:0 auto; width:90%; text-align:justify">
-                                                <p style="font-size:medium">
-                                                <!--<i class="material-icons">error_outline</i>&nbsp; &nbsp;--> On your system, identified by Masstech as Caracol_MassStore Main, you are running MassStore version 8.2.3.1. 
-                                                </p>
+                                                <div class="row">
+                                                    <div class="col"></div>
+                                                    <div class="col">
+                                                        <div class="row accent-color">
+                                                            <div class="col">System Name</div><div class="col">Caracol_MassStore Main</div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col">MassStore version</div><div class="col">8.2.3.1</div>
+                                                        </div>
+                                                        <div class="row accent-color">
+                                                            <div class="col">Support Status</div><div class="col">Under Support</div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col">Expires</div><div class="col">June 7th, 2020</div>
+                                                        </div>
+                                                        <div class="row accent-color">
+                                                            <div class="col">Support Level</div><div class="col">Gold (24x7)</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col"></div>
+                                                </div>
                                                 <br>
-                                                <p style="font-size:medium">
-                                                <!--<i class="material-icons">storage</i>&nbsp; &nbsp;--> According to our records, the number of servers (exluding any tape libraries and cache storages) is 5. Out of these, 1 are acting as application servers,
-                                                    1 are acting as database servers and 4 are acting as external datamovers. Also, there are 7 transcode engine instances running on your system. 
-                                                    The system is currently connected to 87 external storage locations (video servers, watchfolders, FTP servers & other) and 1 tape libraries
-                                                </p>
+                                                <p style="font-size:medium!important">System Architecture</p>
+                                                <div class="row dark-primary-color" style="text-align:center">
+                                                    <div class="col">Total servers</div>
+                                                    <div class="col">Application Servers</div>
+                                                    <div class="col">Database Servers</div>
+                                                    <div class="col">Data Movers</div>
+                                                    <div class="col">Transcode Instances</div>
+                                                    <div class="col">Storage Locations</div>
+                                                    <div class="col">Tape Libraries</div>
+                                                </div>
+                                                <div class="row accent-color" style="text-align:center">
+                                                    <div class="col">5</div>
+                                                    <div class="col">1</div>
+                                                    <div class="col">1</div>
+                                                    <div class="col">4</div>
+                                                    <div class="col">7</div>
+                                                    <div class="col">87</div>
+                                                    <div class="col">1</div>
+                                                </div>
                                                 <br>
-                                                <p style="font-size:medium">
-                                                <!--<i class="material-icons">assignment</i>&nbsp; &nbsp;--> The current support agreement status is Under Support and is set to expire on June 7th, 2020. The current Service agreement is Gold, meaning we support the system 24x7.
-                                                </p>
-                                                <br>
-                                                <p style="font-size:medium">
-                                                    Your Masstech system is managing nnn discrete assets and nnn instances. The number of assets has grown by nnn during the past 12 months.
-                                                </p>
+                                                <p style="font-size:medium!important">Assets</p>
+                                                <div class="row dark-primary-color" style="text-align:center">
+                                                    <div class="col">Discrete Assets</div>
+                                                    <div class="col">Instances</div>
+                                                    <div class="col">Assets increase</div>
+                                                    <div class="col" style="background: #607D8B;"></div>
+                                                    <div class="col" style="background: #607D8B;"></div>
+                                                    <div class="col" style="background: #607D8B;"></div>
+                                                    <div class="col" style="background: #607D8B;"></div>
+                                                </div>
+                                                <div class="row accent-color" style="text-align:center">
+                                                    <div class="col">5</div>
+                                                    <div class="col">5</div>
+                                                    <div class="col">5</div>
+                                                    <div class="col" style="background: #607D8B;"></div>
+                                                    <div class="col" style="background: #607D8B;"></div>
+                                                    <div class="col" style="background: #607D8B;"></div>
+                                                    <div class="col" style="background: #607D8B;"></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -217,13 +264,31 @@
                                                     <div style="margin: 0 auto; width:100%">
                                                         <br>
                                                         Content Summary
-                                                    </div>
-                                                    <br>
-                                                    <div class="container-content">
-                                                        <p style="font-size: medium;text-align:center;">
-                                                            #the missing sub-section
-                                                        </p>
-                                                    </div>
+                                                        </div>
+                                                            <div class="container-content" style="font-size:medium">
+                                                            <br>
+                                                                <div class="row">
+                                                                    <div class="col-3"></div>
+                                                                    <div class="col">
+                                                                        <div class="row dark-primary-color">
+                                                                            <div class="col"></div><div class="col">Total</div><div class="col">Increase</div>
+                                                                        </div>
+                                                                        <div class="row accent-color">
+                                                                            <div class="col">Assets</div><div class="col">3,300,121</div><div class="col">758,514</div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col">Instances</div><div class="col">3,747,321</div><div class="col">772,824</div>
+                                                                        </div>
+                                                                        <div class="row accent-color">
+                                                                            <div class="col">Instances on tapes</div><div class="col">2,803,324</div><div class="col">311,106</div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col">Low resolution proxies</div><div class="col">33</div><div class="col">-</div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-3"></div>
+                                                                </div>
+                                                            </div>
                                                 </div>
                                                 <div class="container-content">
                                                     <div class="pos" style="text-align: center;">
@@ -650,22 +715,25 @@
                                                         <br><br>
                                                     </p>
                                                         <div class="row" style="font-size:medium">
-                                                            <div class="col-1"></div>
+                                                            <div class="col-2"></div>
                                                             <div class="col">
-                                                                <div class="row">
-                                                                    <div class="col" style="text-align:right">The latest Application upgrade:</div><div class="col" style="text-align:left">From version 8.2.2.3 to version 8.2.3 on November 8th, 2019</div>
+                                                                <div class="row dark-primary-color">
+                                                                    <div class="col-3" style="text-align:right">Software</div><div class="col" style="text-align:left">Latest ugrade</div>
+                                                                </div>
+                                                                <div class="row accent-color">
+                                                                    <div class="col-3" style="text-align:right">Application</div><div class="col" style="text-align:left">From version 8.2.2.3 to version 8.2.3 on November 8th, 2019</div>
                                                                 </div>
                                                                 <div class="row">
-                                                                    <div class="col" style="text-align:right">The latest Transcode Engine upgrade:</div><div class="col" style="text-align:left">From version 1.14.1.0 to version 1.14.3.0 on February 27th, 2018</div>
+                                                                    <div class="col-3" style="text-align:right">Transcode Engine</div><div class="col" style="text-align:left">From version 1.14.1.0 to version 1.14.3.0 on February 27th, 2018</div>
+                                                                </div>
+                                                                <div class="row accent-color">
+                                                                    <div class="col-3" style="text-align:right">Workflow Engine</div><div class="col" style="text-align:left">Detail not available</div>
                                                                 </div>
                                                                 <div class="row">
-                                                                    <div class="col" style="text-align:right">The latest Workflow Engine upgrade:</div><div class="col" style="text-align:left">Detail not available</div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col" style="text-align:right">The latest Apache Tomcat upgrade:</div><div class="col" style="text-align:left">From version 8.0.43 to version 8.5 on February 4th, 2019</div>
+                                                                    <div class="col-3" style="text-align:right">Apache Tomcat</div><div class="col" style="text-align:left">From version 8.0.43 to version 8.5 on February 4th, 2019</div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-1"></div>
+                                                            <div class="col-2"></div>
                                                         </div>
                                                         <br>
                                                         
@@ -795,7 +863,7 @@
                                                     <div class="container-content">
                                                         <p style="font-size: medium;text-align:center;">
                                                             This section contains key metrics taken from our ticketing system. 
-                                                            We have logged into our system 187 cases in total, last year's case count being 66
+                                                            We have logged into our system 187 cases in total, last year's case count being 65
                                                             <br><br>
                                                         </p>
                                                         <div class="row">
@@ -844,7 +912,7 @@
                                                                 <li>December - 6 new cases</li>
                                                                 <li>January - 3 new cases</li>
                                                                 <li>February - 9 new cases</li>
-                                                                <li>March - 6 new cases</li>
+                                                                <li>March - 5 new cases</li>
                                                             </ul>
                                                         </p>
                                                     </div>
@@ -876,7 +944,7 @@
                                                                 <li>Escalated - 1</li>
                                                                 <li>In Engineering - 1</li>
                                                                 <li>Wait for customer - 7</li>
-                                                                <li>Wait for 3rd party - 6</li>
+                                                                <li>Wait for 3rd party - 5</li>
                                                                 <li>Resolved - 0*</li>
                                                                 <li>Closed - 50</li>
                                                             </ul>
@@ -916,13 +984,13 @@
                                                 <ul style="font-size:small;list-style:none">
                                                     <li>Urgent - 3</li>
                                                     <li>High - 25</li>
-                                                    <li>Medium - 24</li>
+                                                    <li>Medium - 23</li>
                                                     <li>Low - 14</li>
                                                 </ul>
                                                 <hX style="font-size:medium;">SLA Performance</hX>
                                                 <ul style="font-size:small;list-style:none">
                                                     <li>Fulfilled - 39</li>
-                                                    <li>Running - 13</li>
+                                                    <li>Running - 12</li>
                                                     <li>Violated - 14</li>
                                                 </ul>                                                
                                                 </p>
@@ -949,7 +1017,7 @@
                                                         <hX style="font-size:medium">Status of cases</hX>
                                                         <ul style="font-size:small;list-style:none">
                                                             <li>Assist in using the system - 14</li>
-                                                            <li>Assist in managing or modifying the system - 13</li>
+                                                            <li>Assist in managing or modifying the system - 12</li>
                                                             <li>Remedial operation - 20</li>
                                                             <li>Upgrading and new versions - 2</li>
                                                             <li>Simple Workflows - 4</li>
@@ -982,7 +1050,7 @@
                                                         <p style="font-size:medium">
                                                             <hX style="font-size:medium">How cases are being reported</hX>
                                                             <ul style="font-size:small;list-style:none">
-                                                                <li>Email - 62</li>
+                                                                <li>Email - 61</li>
                                                                 <li>Phone - 0</li>
                                                                 <li>Chat - 0</li>
                                                                 <li>Proactive - 3</li>
@@ -1009,32 +1077,40 @@
                                 <div class="vs-center" style="vertical-align: top;">
                                     <div class="text-primary-color" style="height: 100%;">
                                         <div style="height:75vh;margin-bottom:0;" class="row my-auto">
-                                            <div style="margin:0 auto">
+                                            <div style="margin:0 auto; width:100%">
                                                 <br>
                                                 Conclusion
                                             </div>
                                             <br>
-                                            <div class="container-content">
-                                            <p style="font-size: medium;text-align:justify;">
-                                                Before generating this report, one of our Support engineers was connected to your system. An in depth check was made to ensure all components are properly functioning.<br>
+                                            
+                                                <div class="row" style="width:100%">
+                                                    <div class="col-2"></div>
+                                                    <div class="col">
+                                                        <p style="font-size: medium;text-align:justify;">
+                                                            Before generating this report, one of our Support engineers was connected to your system. A thorough analysis was made to ensure all components are properly functioning.<br>
+                                                            <br>
+                                                            The system analysis was scheduled on April 7th, 2020 and was completed on April 9th, 2020.
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-2"></div>
+                                                </div>
+                                                <div class="row" style="width:100%">
+                                                    <div class="col-2"></div>
+                                                    <div class="col" style="font-size: medium; text-align:justify;">
+                                                        There were no issues found while performing the system health check. &nbsp;After finishing the system analysis, the engineer concluded:<br><br>
+                                                        <q>I connected to the customer's system and didn't find any issues. The system is working fine, there aren't any failed workflows, transfers or transcodes. All the servers are online, the daily database backups are working. The storage locations are all connected and are discovering content.<br /><br />I connected on all servers and made sure there is plenty of free space on the c: drive. Also, the cache space is between limits and there is enough space available on tape for writing in all media groups.<br /><br />In conclusion, I haven't found any trace of malfunctions on the system.</q>
+                                                    </div>
+                                                    <div class="col-2"></div>
+                                                </div>
                                                 <br>
-                                                The system health check was scheduled on March 2nd, 2020 and was completed on March 2nd, 2020.
-                                                <br><br>
-                                            </p>
-                                            <div class="row">
-                                                <div class="col" style="font-size: medium; text-align:justify">
-                                                    <br>
-                                                    While performing the health check critical issues that were affecting the system as well as some other minor issues were found and fixed. &nbsp;After finishing the system check, the engineer concluded:<br><br>
-                                                    <q>is working<br />CC446867</q>
+                                                <div class="row" style="width:100%">
+                                                    <div class="col-2"></div>
+                                                    <div class="col" style="font-size: medium;text-align:center;">
+                                                        The next system analysis is scheduled for April 9th, 2021
+                                                    </div>
+                                                    <div class="col-2"></div>
                                                 </div>
-                                            </div>
-                                            <br>
-                                            <div class="row">
-                                                <div class="col" style="font-size: medium;text-align:center;">
-                                                The next health check is scheduled for March 2nd, 2021
-                                                </div>
-                                            </div>
-                                            </div>                                
+                                                                            
                                         </div>
                                     </div>
                                 </div>
@@ -1055,12 +1131,17 @@
 <script src="https://mircha.github.io/healthcheck/assets/viewscroller/viewScroller.js"></script>
 
 <style>
+    @media only screen and (max-height: 900px){
+        .mainbag p, ol, ul, hX, a{
+            font-size: small!important;
+        }
+    }
     #app-bar{
         transition: all 0.1s cubic-bezier(0.4, 0, 1, 1);
         height: 300px;
-        background: url('https://mircha.github.io/healthcheck/assets/img/header.jpg');
-        background-position-y: -150px;
-        background-size: 100% 1000px;
+        background: url('https://mircha.github.io/healthcheck/assets/img/fill.jpg');
+        background-position-y: -160px;
+        background-size: cover;
         height: 300px;
         padding-top: 237px;
     }
@@ -1069,41 +1150,45 @@
         color: black;
     }
 </style>
-<script>
-function test() {
-var container = $('#app-bar');
-var containerHeight = container.height();
-var scrollPosition = $('#first-page').offset().top - container.offset().top;
-if (containerHeight < scrollPosition) {
-    //console.log('not visible');//headerSummary
-    document.getElementById("app-bar").style.height = "300px";
-    document.getElementById("app-bar").style.paddingTop = "237px";
-    document.getElementById("headerSummary").style.background = "rgba(255,255,255,0.66)";
-    document.getElementById("headerSummary").style.color = "black";
-    document.getElementById("test").style.color = "black";
-    document.getElementById("ms").style.display = "none";
-} else {
-    //console.log('visible');
-    document.getElementById("app-bar").style.height = "64px";
-    document.getElementById("app-bar").style.paddingTop = "0";
-    document.getElementById("headerSummary").style.color = "white";
-    document.getElementById("headerSummary").style.backgroundColor = "#455A64";
-    document.getElementById("test").style.color = "white"
-    document.getElementById("ms").style.display = "block";
-}
-}
+
+    <script>
+    function test() {
+        var container = $('#app-bar');
+        var containerHeight = container.height();
+        var scrollPosition = $('#first-page').offset().top - container.offset().top;
+        if (containerHeight < scrollPosition) {
+            //console.log('not visible');//headerSummary
+            document.getElementById("app-bar").style.height = "300px";
+            document.getElementById("app-bar").style.paddingTop = "237px";
+            document.getElementById("headerSummary").style.background = "rgba(255,255,255,0.66)";
+            document.getElementById("headerSummary").style.color = "black";
+            document.getElementById("test").style.color = "black";
+            document.getElementById("ms").style.display = "none";
+            document.getElementById("mslogo").style.top = "5%";
+            document.getElementById("head").style.display = "block";
+        } else {
+            //console.log('visible');
+            document.getElementById("app-bar").style.height = "64px";
+            document.getElementById("app-bar").style.paddingTop = "0";
+            document.getElementById("headerSummary").style.color = "white";
+            document.getElementById("headerSummary").style.backgroundColor = "#455A64";
+            document.getElementById("test").style.color = "white"
+            document.getElementById("ms").style.display = "block";
+            document.getElementById("mslogo").style.top = "-100px";
+            document.getElementById("head").style.display = "none";
+        }
+        }
     $(function() {
         $('body').mousedown(function(e){if(e.button==1)return false});
     });
         $(document).ready(function () {
-            window.onscroll = function() {scrollFunction();};
             // Sets viewScroller
             $('.mainbag').viewScroller({
                 useScrollbar: false,
                 changeWhenAnim: false,
                 afterChange: function() {
                     test()
-	}
+	            }
             });
             options_bar.title.text='Masstech Managed Assets'
             options_bar.axisY={title:'Total Assets'}
@@ -1203,7 +1288,7 @@ if (containerHeight < scrollPosition) {
                 toolTipContent: "<b>{label}</b>: {y} new cases",
                 indexLabel: "{y}",
                 color: "LightSeaGreen",
-                dataPoints:[{"y":6,"label":"April"},{"y":3,"label":"May"},{"y":7,"label":"June"},{"y":3,"label":"July"},{"y":3,"label":"August"},{"y":10,"label":"September"},{"y":5,"label":"October"},{"y":5,"label":"November"},{"y":6,"label":"December"},{"y":3,"label":"January"},{"y":9,"label":"February"},{"y":6,"label":"March"}]
+                dataPoints:[{"y":6,"label":"April"},{"y":3,"label":"May"},{"y":7,"label":"June"},{"y":3,"label":"July"},{"y":3,"label":"August"},{"y":10,"label":"September"},{"y":5,"label":"October"},{"y":5,"label":"November"},{"y":6,"label":"December"},{"y":3,"label":"January"},{"y":9,"label":"February"},{"y":5,"label":"March"}]
             }]
             
             chartSupportCasesOverTime = new CanvasJS.Chart('chartContainerSupport5', options_bar);chartSupportCasesOverTime.render();
@@ -1222,7 +1307,7 @@ if (containerHeight < scrollPosition) {
                     {y:1, name:'Escalated'},
                     {y:1, name:'In Engineering'},
                     {y:7, name:'Wait for customer'},
-                    {y:6, name:'Wait for 3rd party'},
+                    {y:5, name:'Wait for 3rd party'},
                     {y:0, name:'Resolved'},
                     {y:50, name:'Closed'},
                 ]
@@ -1239,7 +1324,7 @@ if (containerHeight < scrollPosition) {
                 dataPoints:
                 [
                     {y:14, name:'Assist in using the system'},
-                    {y:13, name:'Assist in managing or modifying the system'},
+                    {y:12, name:'Assist in managing or modifying the system'},
                     {y:20, name:'Remedial operation'},
                     {y:2, name:'Upgrading and new versions'},
                     {y:4, name:'Simple Workflows'},
@@ -1265,7 +1350,7 @@ if (containerHeight < scrollPosition) {
                     {y:14, name:'Low'},
                     {y:25, name:'High'},
                     {y:3, name:'Urgent'},
-                    {y:24, name:'Medium'},
+                    {y:23, name:'Medium'},
                 ]
             }]  
             chartSupportPriority = new CanvasJS.Chart('chartContainerSupport2', options_pie);chartSupportPriority.render();
@@ -1281,7 +1366,7 @@ if (containerHeight < scrollPosition) {
                 [
                     {y:0, name:'System Notification'},
                     {y:0, name:'Phone'},
-                    {y:62, name:'Email'},
+                    {y:61, name:'Email'},
                     {y:0, name:'Chat'},
                     {y:3, name:'Proactive'},
                 ]
@@ -1299,7 +1384,7 @@ if (containerHeight < scrollPosition) {
                 [
                     {y:39, name:'Fullfilled', color:'LightSeaGreen'},
                     {y:14, name:'Violated', color: 'salmon'},
-                    {y:13, name:'Running', color:'lightblue'}
+                    {y:12, name:'Running', color:'lightblue'}
                 ]
             }]
             chartSupportSLA = new CanvasJS.Chart('chartContainerSupport3', options_pie);chartSupportSLA.render();
@@ -1364,6 +1449,5 @@ if (containerHeight < scrollPosition) {
         topAppBar.listen('MDCTopAppBar:nav', () => {
             drawer.open = !drawer.open;
         });
-        
     </script>
     
