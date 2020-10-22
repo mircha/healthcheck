@@ -1,0 +1,1241 @@
+<link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.css">
+<link rel="stylesheet" href="https://bootswatch.com/_assets/css/custom.min.css">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+
+<style>
+    .underline{
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    }
+    .form-control-sm{
+        height: 24px;
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.5);
+        color:rgba(255,255,255,0.60);;
+    }
+    .style-select{
+        padding-top:0!important;
+    }
+    ::placeholder{
+        color: rgba(255,255,255,0.5)!important;
+    }
+    .editable{
+        min-width:70%;
+        border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+        display: inline-block;
+        word-break: break-all;
+        break-before: auto
+    }
+    .editable-large{
+        min-width:100%;
+        border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+        display: inline-block;
+        word-break: break-all;
+        break-before: auto
+    }
+    body{
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+        /* background-color: #212121;
+        color: rgba(255,255,255,0.60); */
+        font-size: 14px!important;
+        letter-spacing: 0.2px!important;
+        line-height: 1.4!important;
+        font-family: Brutal,sans-serif!important;
+        text-rendering: optimizeLegibility!important;
+    }
+/* #2B3E50 */
+body:before {
+    content:"";
+    display:block;
+    position:fixed;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    z-index:-1;
+    /* background-color: rgba(43,62,80, 0.97); */
+    /* background-color: #121212;
+    color: #666666!important; */
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+        color: #fff!important;
+        border-color: #df691a!important;
+        background-color: #df691a!important;
+    }
+/* .bg-dark{
+    background: #2a2a2a!important;
+}
+.card-body{
+    background: #121212!important;
+}
+.card{
+    background: #202020!important;
+    border: 1px solid #202020!important;
+} */
+</style>
+<body style="padding-top:60px">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"><img src="https://mircha.github.io/healthcheck/assets/img/ms.png" style="height:28px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#" id="host_server_link">Host Server <sup><span class="badge badge-pill badge-danger" id="pr_host"><i id="ico_host" class="fas fa-times"></i></span></sup></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="tape_link">Tape Library <sup><span class="badge badge-pill badge-danger" id="pr_tape"><i id="ico_tape" class="fas fa-times"></i></span></sup></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="storage_link">Storage <sup><span class="badge badge-pill badge-danger" id="pr_storage"><i id="ico_storage" class="fas fa-times"></i></span></sup></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="fiber_link">Fiber Switch <sup><span class="badge badge-pill badge-danger" id="pr_switch"><i id="ico_switch" class="fas fa-times"></i></span></sup></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="statistics_link">Statistics <sup><span class="badge badge-pill badge-danger" id="pr_statistics"><i id="ico_statistics" class="fas fa-times"></i></span></sup></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="remote_link">Remote Servers <sup><span class="badge badge-pill badge-warning" id="pr_remote">0</span></sup></a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+          <ul class="nav navbar-nav navbar-right" style="font-size: 150%">
+            <li class="nav-item" style="padding-right: 25px"><i class="far fa-clock"></i> <span id="closeTimer">--:--</span></li>
+			<li class="nav-item" style="padding-right: 25px">
+					<span id="checkFTP" class="badge badge-pill"><i class="fas fa-upload"></i></span>
+					<span id="checkDrop" class="badge badge-pill"><i class="fab fa-dropbox"></i></span>
+					<span id="checkFire"class="badge badge-pill"><i class="fas fa-fire"></i></span>
+            </li>
+        </ul>
+        <button class="btn btn-danger" id="show_build">Build</button>
+      </form>
+    </div>
+</nav>
+<!-- HOST SERVER INFORMATION -->
+<div class="container-fluid" style="margin-top:0; padding-top:0;display:none" id="host_server">
+    <div class="card border-dark mb-3">
+        <div class="card-header"><i class="fas fa-server"></i> &nbsp;Host Server Hardware Information</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <h6 class="card-title underline">CPU</h6>
+                    <div class="row">
+                        <div class="col">
+                                Manufacturer: <span id="cpu_manufacturer"></span><br>
+                                Brand: <span id="cpu_brand"></span>
+                        </div>
+                        <div class="col">
+                                Speed: <span id="cpu_speed"></span> GHz<br>
+                                Cores # : <span id="cpu_cores"></span> cores
+                        </div>
+                    </div>
+                    <div class="row">&nbsp;</div>
+                    <h6 class="card-title underline">Memory</h6>
+                    <div class="row">
+                            <div class="col">
+                                    Total: <span id="ram_total"></span> GB
+                            </div>
+                            <div class="col">
+                                    Free: <span id="ram_free"></span> GB
+                            </div>
+                            <div class="col">
+                                    Used: <span id="ram_used"></span> GB
+                            </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h6 class="card-title underline">Network</h6>
+                    <div class="row">
+                        <div class="col">
+                                Select Network:
+                        </div>
+                        <div class="col">
+                                <select id="selectNetwork" class="form-control form-control-sm style-select" style="width:100%;"></select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                                Name:<br>
+                                IP: 
+                        </div>
+                        <div class="col">
+                                <span id="net_name"></span><br>
+                                <span id="net_ip"></span>
+                        </div>
+                    </div>
+                    <h6 class="card-title underline">OS drive</h6>
+                    <div class="row">
+                        <div class="col">
+                                Letter: <span id="osDrive">C:</span><br>
+                                Size: <span id="osDriveCapacity"></span> GB<br>
+                                <label for="selectOS" style="float:left; line-height:2"></label>Select drive: </label>
+                        </div>
+                        <div class="col">
+                                Free: <span id="osDriveFree"></span> GB<br>
+                                Used: <span id="osDriveUsed"></span> GB<span id="osDriveUsage_b" class="badge badge-pill badge-light"><span id="osDriveUsage"></span>%</span>
+                                <select id="selectOS" class="form-control form-control-sm style-select" style="max-width:50px"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h6 class="card-title underline">System</h6>
+                    <div class="row">
+                        <div class="col">
+                                S/N: <span id="sys_sn"></span><br>
+                                Model: <span id="sys_model"></span>
+                        </div>
+                        <div class="col">
+                                Base S/N: <span id="base_sn"></span><br>
+                                Base Model: <span id="base_model"></span>
+                        </div>
+                    </div>
+                    <div class="row">&nbsp;</div>
+                    <h6 class="card-title underline">OS</h6>
+						<div class="row">
+							<div class="col">
+									Distribution: <span id="os_distro"></span><br>
+									Host: <span id="os_hostname"></span><br>
+							</div>
+							<div class="col">
+									Architecture: <span id="os_arch"></span><br>
+									Power Shell: <span id="powershell"></span><br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<input id="selectUser" class="form-control form-control-sm" style="width:90%" placeholder="Insert Username">
+							</div>
+							<div class="col">
+								<input id="selectPassword" class="form-control form-control-sm" style="width:90%" placeholder="Insert Password">
+							</div>
+						</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card border-dark mb-3">
+        <div class="card-header"><i class="fas fa-code"></i> &nbsp; Host Server Software Information</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <h6 class="card-title underline">Masstech Software</h6>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">Application</div><div class="col"><span id="msVersion" contenteditable="true" class="editable"></span></div>
+                            </div>
+                            <div class="row">
+                                    <div class="col">Transcoder</div><div class="col"><span id="hqs" contenteditable="true" class="editable"></span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col">Instances</div><div class="col"><span id="hqs_i" contenteditable="true" class="editable"></span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col">Profile</div><div class="col"><span id="hqsProfile" contenteditable="true" class="editable"></span></div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- AAF Processor: <span id="aaf"></span><br> -->
+                            <div class="row">
+                                <div class="col">WFE</div><div class="col"><span id="wfe" contenteditable="true" class="editable"></span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col">Updater</div><div class="col"><span id="mtgS" contenteditable="true" class="editable"></span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col">ENPS plugin</div><div class="col"><span id="enps" contenteditable="true" class="editable"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col">iNews plugin</div><div class="col"><span id="inews" contenteditable="true" class="editable"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row"><div class="col">&nbsp;</div></div>
+                    <h6 class="card-title underline">Maintenance Scripts</h6>
+                    <div class="row">
+                        <div class="col">
+                            Clean-Up:<br>
+                            Auto Updater: <br>
+                            Health Check: <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h6 class="card-title underline">Oracle Database</h6>
+                    <div class="row">
+                        <div class="col">
+                                <div class="row">
+                                    <div class="col-4">Version</div><div class="col"><span id="oracle" contenteditable="true" class="editable-large"></span></div>
+                                    <div class="col-3">Database Size</div><div class="col"><span id="" contenteditable="true" class="editable-large"></span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">Backup Script <a href="#" id="refreshOracle" data-toggle="popover" class="text-info"><i class="far fa-folder-open"></i></a></div><div class="col"><span id="db_backup" contenteditable="true" class="editable-large"></span></div>
+                                    <div class="col-3">Clean-Up History</div><div class="col"><span id="db_clean" contenteditable="true" class="editable-large"></span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">Database Location</div><div class="col"><span id="" contenteditable="true" class="editable-large"></span></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">Backup 2<sup>nd</sup> location</div><div class="col"><span id="db_second_location" contenteditable="true" class="editable-large"></span></div>
+                                </div>
+                                <!-- 2nd location: <span id="db_second"></span> <br> -->
+                        </div>
+                    </div>
+                    <div class="row"><div class="col">&nbsp;</div></div>
+                    <h6 class="card-title underline">PostgreSQL Database</h6>
+						<div class="row">
+							<div class="col">
+                                    <div class="row">
+                                        <div class="col-4">Version</div><div class="col"><span id="pg" contenteditable="true" class="editable-large"></span></div>
+                                        <div class="col-3">Database Size</div><div class="col"><span id="" contenteditable="true" class="editable-large"></span></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">Backup Script <a href="#" id="refreshPG" data-toggle="popover" class="text-info"><i class="far fa-folder-open"></i></a></div><div class="col"><span id="pg_backup" contenteditable="true" class="editable-large"></span></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">Database Location</div><div class="col"><span id="" contenteditable="true" class="editable-large"></span></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4">Backup 2<sup>nd</sup> location</div><div class="col"><span id="pg_second_location" contenteditable="true" class="editable-large"></span></div>
+                                    </div>
+									<!-- 2nd location: <span id="pg_second"></span><br> -->
+							</div>
+						</div>
+                </div>
+                <div class="col">
+                    <h6 class="card-title underline">3<sup>rd</sup> Party Software</h6>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-4">Tomcat</div><div class="col"><span id="tomcat" contenteditable="true" class="editable-large"></span></div>
+                                <div class="col-3">Rabbit MQ</div><div class="col"><span id="" contenteditable="true" class="editable-large"></span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">Elastic</div><div class="col"><span id="" contenteditable="true" class="editable-large"></span></div>
+                                <div class="col-3">Kibana</div><div class="col"><span id="" contenteditable="true" class="editable-large"></span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">Elastic Backup</div><div class="col"><span id="" contenteditable="true" class="editable-large"></span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">Kibana Backup</div><div class="col"><span id="" contenteditable="true" class="editable-large"></span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">MongoDB</div><div class="col"><span id="mongo" contenteditable="true" class="editable-large"></span></div>
+                                <div class="col-3">SNFS Server</div><div class="col"><span id="snfsServer" contenteditable="true" class="editable-large"></span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">SNFS Client</div><div class="col"><span id="snfsCli" contenteditable="true" class="editable-large"></span></div>
+                                <div class="col-3">Clients #</div><div class="col"><span id="snfsNoClients" contenteditable="true" class="editable-large"></span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">Stornext S/N</div><div class="col"><span id="snfsSN" contenteditable="true" class="editable-large"></span></div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                                Codecs:<br>
+                                <span id="AAC_b" class="badge badge-pill badge-light">AAC</span>&nbsp; <span id="AAC" class="hide"></span>
+                                <span id="H264_b" class="badge badge-pill badge-light">H264</span>&nbsp; <span class="hide" id="H264"></span><br>
+								<span id="H264_and_AAC_b" class="badge badge-pill badge-light">H264 & AAC</span>&nbsp; <span class="hide" id="H264_and_AAC"></span><br>
+								<span id="DVPRO_HD_b" class="badge badge-pill badge-light">DVPRO HD</span>&nbsp; <span class="hide" id="DVPRO_HD"></span><br>
+								<span id="DVPRO_b" class="badge badge-pill badge-light">DVPRO</span> &nbsp;<span class="hide" id="DVPRO"></span><br>
+								<span id="AVC-Intra_b" class="badge badge-pill badge-light">AVC-Intra</span>&nbsp; <span class="hide" id="AVC-Intra"></span><br>
+								<span id="DolbyE_b" class="badge badge-pill badge-light">DolbyE</span> &nbsp;<span class="hide" id="DolbyE"></span><br>
+								<span id="JPEG2000_b" class="badge badge-pill badge-light">JPEG2K</span>&nbsp; <span class="hide" id="JPEG2000"></span><br>
+								<span id="Mpeg2_b" class="badge badge-pill badge-light">MPEG 2</span> &nbsp;<span class="hide" id="Mpeg2"></span><br>
+								<span id="codecsFolder_b" class="badge badge-pill badge-light">Folder</span> &nbsp;<span class="hide" id="codecsFolder"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="input-group">
+        <div id="hostSwitch" class="btn-group">
+            <a class="btn btn-success btn-sm notActive" data-toggle="host" data-title="Y"><i class="fas fa-check"></i> Confirm</a>
+            <a class="btn btn-warning btn-sm notActive" data-toggle="host" data-title="X"><i class="fas fa-times"></i> Skip</a>
+            <input type="hidden" name="host" id="host">
+        </div>
+    </div>
+    <!-- <div class="card border-dark mb-3">
+        <div class="card-header"><i class="fas fa-exclamation-circle"></i> &nbsp; Notifications</div>
+        <div class="card-body">
+
+        </div>
+    </div> -->
+</div>
+<!-- HOST SERVER INFORMATION -->
+<!-- TAPE LIBARY INFORMATION -->
+<div class="container-fluid" style="margin-top:0; padding-top:0;display:" id="tape_screen">
+    <div class="card border-dark mb-3">
+        <div class="card-header"><i class="fas fa-database"></i> &nbsp;Connection</div>
+        <div class="card-body">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="row">
+                            <div class="col-3"><label for="dbhostlib">Database (host/IP):</label></div>
+                            <div class="col-2"><input type="text" id="dbhostlib" value="MASSDB" class="form-control form-control-sm"></div>
+                            <div class="col-2"><input type="text" id="dbhostlib_u" placeholder="username" class="form-control form-control-sm"></div>
+                            <div class="col-2"><input type="text" id="dbhostlib_p" placeholder="password" class="form-control form-control-sm"></div>
+                            <div class="col-3"><button id="queryLibraries" class="btn btn-light btn-sm" style="width:100%">Query Libraries</button></div>      
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="row">
+                            <div class="col-3"><label for="">Application IP:</label></div>
+                            <div class="col-2"><input type="text" id="" value="127.0.0.1" class="form-control form-control-sm"></div>
+                            <div class="col-2"><input type="text" id="" placeholder="username" class="form-control form-control-sm" value="freeflow"></div>
+                            <div class="col-2"><input type="text" id="" placeholder="password" class="form-control form-control-sm" value="freeflow"></div>
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+                <div class="row"><div class="col">&nbsp;</div></div>
+                <div class="row">
+                    <div class="col-5">
+                        <div class="row">
+                            <div class="col-3"><label for="libSelect">Select Tape Library:</label></div>
+                            <div class="col-6"><select id="libSelect" style="width:100%" class="form-control form-control-sm style-select"></select></div>
+                            <div class="col-3"><button id="queryLibraryInfo" class="btn btn-light btn-sm" style="width:100%">Get Statistics</button></div>
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+        </div>
+    </div>
+    <div class="card border-dark mb-3">
+            <div class="card-header"><i class="fas fa-server"></i> &nbsp;Tape Library Information</div>
+            <div class="card-body">
+                <h6 class="card-title underline">Connection</h6>
+                <div class="row">
+                    <div class="col">
+                    <div class="row">
+                        <div class="col-1"><label for="lib_ip">IP:</label></div>
+                        <div class="col"><input type="text" id="lib_ip" class="form-control input-sm form-control-sm"></div>
+                        <div class="col-1"><label for="lib_user">User:</label></div>
+                        <div class="col"><input type="text" id="lib_user" class="form-control input-sm form-control-sm "></div>
+                        <div class="col-1"><label for="lib_pass">Password:</label></div>
+                        <div class="col"><input type="text" id="lib_pass" class="form-control input-sm form-control-sm "></div>
+                    </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+                <div class="row"><div class="col">&nbsp;</div></div>
+                <h6 class="card-title underline">Tape Library Details</h6>
+                <div class="row">
+                    <div class="col"><label for="label_MS">Masstech Name</label></div>
+                    <div class="col"><input type="text" id="label_MS" class="form-control input-sm form-control-sm"></div>
+                    <div class="col"><label for="lib_vendor">Vendor</label></div>
+                    <div class="col">
+                        <select id="lib_vendor" class="form-control form-control-sm style-select">
+                            <option value=""></option>
+                            <option value="Spectra">Spectra</option>
+                            <option value="IBM">IBM</option>
+                            <option value="Qualstar">Qualstar</option>
+                            <option value="HP">HP</option>
+                            <option value="Dell">Dell</option>
+                            <option value="Quantum">Quantum</option>
+                            <option value="Storagetek">Storagetek</option>
+                        </select>
+                    </div>
+                    <div class="col"><label for="lib_model">Model</label></div>
+                    <div class="col">
+                        <select id="lib_model" class="form-control form-control-sm style-select">
+                            <option value="T50/T50e" data-chained="Spectra">T50/T50e</option>
+                            <option value="T120" data-chained="Spectra">T120</option>
+                            <option value="T200" data-chained="Spectra">T200</option>
+                            <option value="T680" data-chained="Spectra">T680</option>
+                            <option value="T950" data-chained="Spectra">T950</option>
+                            <option value="TFinity" data-chained="Spectra">TFinity</option>
+                            <option value="TS3200" data-chained="IBM">TS3200</option>
+                            <option value="TS3500" data-chained="IBM">TS3500</option>
+                            <option value="TS4000" data-chained="IBM">TS4000</option>
+                            <option value="TS4500" data-chained="IBM">TS4500</option>
+                            <option value="Q80" data-chained="Qualstar">Q80</option>
+                            <option value="MSL G3 Series" data-chained="HP">MSL G3 Series</option>
+                            <option value="TL4000" data-chained="Dell">TL4000</option>
+                            <option value="Scalar i40" data-chained="Quantum">Scalar i40</option>
+                            <option value="SL150" data-chained="Storagetek">SL150</option>
+                            <option value="SL3000" data-chained="Storagetek">SL3000</option>
+                            <option value="Other" data-chained="Storagetek">Other</option>
+                            <option value="Other" data-chained="Quantum">Other</option>
+                            <option value="Other" data-chained="Dell">Other</option>
+                            <option value="Other" data-chained="HP">Other</option>
+                            <option value="Other" data-chained="IBM">Other</option>
+                            <option value="Other" data-chained="Spectra">Other</option>
+                        </select>
+                    </div>
+                    <div class="col"><label for="lib_LTO">Drive Generation:</label></div>
+                    <div class="col">
+                        <select id="lib_LTO" name="storageType" class="form-control form-control-sm style-select">
+                            <option value=""></option>
+                            <option value="LTO3">LTO3</option>
+                            <option value="LTO4">LTO4</option>
+                            <option value="LTO5">LTO5</option>
+                            <option value="LTO6">LTO6</option>
+                            <option value="LTO7">LTO7</option>
+                            <option value="LTO8">LTO8</option>
+                            <option value="LTO9">LTO9</option>
+                            <option value="ODA">ODA</option>
+                        </select>
+                    </div>
+                    <div class="col"><label for="lib_drives">Drives #</label></div>
+                    <div class="col"><input type="text" id="lib_drives" class="form-control input-sm form-control-sm"></div>
+                    <div class="col"><label for="ltfs">LTFS</label></div>
+                    <div class="col">
+                        <select id="ltfs" class="form-control form-control-sm style-select">
+                            <option value="0">No</option>
+                            <option value="1" selected>Yes</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col"><label for="lib_mt">Machine Type</label></div>
+                        <div class="col"><input type="text" id="lib_mt" class="form-control input-sm form-control-sm"></div>
+                        <div class="col"><label for="lib_sn">Serial Number</label></div>
+                        <div class="col"><input type="text" id="lib_sn" class="form-control input-sm form-control-sm"></div>
+                        <div class="col"><label for="lib_firm">Library Firmware</label></div>
+                        <div class="col"><input type="text" id="lib_firm" class="form-control input-sm form-control-sm"></div>
+                        <div class="col"><label for="lib_drives_firm">Drive Firmware</label></div>
+                        <div class="col"><input type="text" id="lib_drives_firm" class="form-control input-sm form-control-sm"></div>
+                        <div class="col"><label for="lib_partitions">Partitions</label></div>
+                        <div class="col"><input type="text" id="lib_partitions" class="form-control input-sm form-control-sm"></div>
+                        <div class="col"><label for="cleaning">Cleaning</label></div>
+                        <div class="col">
+                            <select id="cleaning" class="form-control form-control-sm style-select">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                </div>
+                <div class="row">
+                    <div class="col">&nbsp;</div>
+                        <!-- <div class="col"><label for="tape_report">Tape Report</label></div>
+                        <div class="col"><input type="text" id="tape_report" class="form-control input-sm form-control-sm"></div> -->
+                </div>
+                <h6 class="card-title underline">Tape Library Statistics</h6>
+                <div class="row">
+                        <div class="col"><label for="lib_slots">Number of Slots</label></div>
+                        <div class="col"><input type="text" id="lib_slots" class="form-control input-sm form-control-sm"></div>
+                        <div class="col"><label for="">Full Slots</label></div>
+                        <div class="col"><input type="text" id="" class="form-control input-sm form-control-sm"></div>
+                        <div class="col"><label for="total_tapes">Total Tapes</label></div>
+                        <div class="col"><input type="text" id="total_tapes" class="form-control input-sm form-control-sm"></div>
+                        <div class="col"><label for="tapes_inside">Tapes Inside</label></div>
+                        <div class="col"><input type="text" id="tapes_inside" class="form-control input-sm form-control-sm"></div>
+                        <div class="col"><label for="">Total Space</label></div>
+                        <div class="col"><input type="text" id="" class="form-control input-sm form-control-sm"></div>
+                        <div class="col"><label for="">Free Space</label></div>
+                        <div class="col"><input type="text" id="" class="form-control input-sm form-control-sm"></div>
+                </div>
+                <div class="row">
+                    <div class="col"><label for="">Unformatted</label></div><div class="col"><input type="text" id="" class="form-control input-sm form-control-sm"></div>
+                    <div class="col"><label for="">Formatted</label></div><div class="col"><input type="text" id="" class="form-control input-sm form-control-sm"></div>
+                    <div class="col"><label for="">Online</label></div><div class="col"><input type="text" id="" class="form-control input-sm form-control-sm"></div>
+                    <div class="col"><label for="">Read Only</label></div><div class="col"><input type="text" id="" class="form-control input-sm form-control-sm"></div>
+                    <div class="col"><label for="">Offline</label></div><div class="col"><input type="text" id="" class="form-control input-sm form-control-sm"></div>
+                    <div class="col"><label for="">Warning</label></div><div class="col"><input type="text" id="" class="form-control input-sm form-control-sm"></div>
+                </div>
+                <div class="row">
+                    <div class="col">&nbsp;</div>
+                </div>
+                <h6 class="card-title underline">Notes</h6>
+                <div class="row">
+                    <div class="col">
+                        <textarea class="form-control input-sm form-control-sm" placeholder="Insert here any information that cannot be added using the above fields"></textarea>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div id="tapeSwitch" class="btn-group">
+        <a class="btn btn-success btn-sm notActive" data-toggle="tape" data-title="Y"><i class="fas fa-check"></i> Confirm</a>
+        <a class="btn btn-warning btn-sm notActive" data-toggle="tape" data-title="X"><i class="fas fa-times"></i> Skip</a>
+        <input type="hidden" name="tape" id="tape">
+    </div>
+</div>
+<!-- TAPE LIBARY INFORMATION -->
+<!-- SWITCH INFORMATION -->
+<div class="container-fluid" style="margin-top:0; padding-top:0;display:" id="switch_screen">
+    <div class="card border-dark mb-3">
+        <div class="card-header"><i class="fas fa-random"></i> Fiber Switch Information</div>
+        <div class="card-body">
+            <div class="row">
+                <div style="width:50px; padding-left:15px"><label for="switch_ip">IP:</label></div>
+                <div class="col"><input type="text" id="switch_ip" class="form-control input-sm form-control-sm"></div>
+                <div style="width:50px; padding-left:15px"><label for="switch_user">User:</label></div>
+                <div class="col"><input type="text" id="switch_user" class="form-control input-sm form-control-sm"></div>
+                <div style="width:75px; padding-left:15px"><label for="switch_pass">Password:</label></div>
+                <div class="col"><input type="text" id="switch_pass" class="form-control input-sm form-control-sm"></div>
+                <div class="col-6">&nbsp;</div>
+            </div>
+            <h6 class="card-title underline">Notes</h6>
+            <div class="row">
+                <div class="col">
+                    <textarea class="form-control input-sm form-control-sm" placeholder="Insert any additional info here"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="input-group">
+        <div id="switchSwitch" class="btn-group">
+            <a class="btn btn-success btn-sm notActive" data-toggle="host" data-title="Y"><i class="fas fa-check"></i> Confirm</a>
+            <a class="btn btn-warning btn-sm notActive" data-toggle="host" data-title="X"><i class="fas fa-times"></i> Skip</a>
+        </div>
+        <input type="hidden" name="switch" id="switch">
+    </div>
+</div>
+<!-- SWITCH INFORMATION -->
+<!-- STATISTICS INFORMATION -->
+<div class="container-fluid" style="margin-top:0; padding-top:0;display: " id="statistics_screen">
+    <div class="card border-dark mb-3">
+        <div class="card-header"><i class="fas fa-chart-pie"></i> Statistics</div>
+        <div class="card-body">
+            <h6 class="card-title underline">From Oracle Database</h6>
+            <div class="row">
+                <div class="col">Active Workflows:</div><div class="col"><span id="stats_activeWorkflows"></span></div>
+                <div class="col">Inactive Workflows:</div><div class="col"><span id="stats_inactiveWorkflows"></span></div>
+            </div>
+            <div class="row">
+                <div class="col">Active Locations:</div><div class="col"><span id="stats_activeLocations"></span></div>
+                <div class="col">Inactive Locations:</div><div class="col"><span id="stats_inactiveLocations"></span></div>
+            </div>
+            <div class="row">
+                <div class="col">Active Users:</div><div class="col"><span id="stats_activeUsers"></span></div>
+                <div class="col">User Groups:</div><div class="col"><span id="stats_userGroups"></span></div>
+            </div>
+            <div class="row">
+                <div class="col">Active Transcode Profiles:</div><div class="col"><span id="stats_activeTranscodeProfiles"></span></div>
+                <div class="col">Inactive Transcode Profiles:</div><div class="col"><span id="stats_inactiveTranscodeProfiles"></span></div>
+            </div>
+            <div class="row">
+                <div class="col">Workflow Engine Workflows:</div><div class="col"><span id="stats_wfeWorkflows"></span></div>
+            </div>
+            <div class="row"><div class="col">&nbsp;</div></div>
+            <h6 class="card-title underline">From API</h6>
+            <div class="row">
+                <div class="col">Assets:</div><div class="col"><span id="stats_assets"></span></div>
+                <div class="col">Active Instances:</div><div class="col"><span id="stats_instancesActive"></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="input-group">
+        <div id="statisticsSwitch" class="btn-group">
+            <a class="btn btn-success btn-sm notActive" data-toggle="statistics" data-title="Y"><i class="fas fa-check"></i> Confirm</a>
+            <a class="btn btn-warning btn-sm notActive" data-toggle="statistics" data-title="X"><i class="fas fa-times"></i> Skip</a>
+        </div>
+        <input type="hidden" name="statistics" id="statistics">
+    </div>
+</div>
+<!-- STATISTICS INFORMATION -->
+<!-- CACHE INFORMATION -->
+<div class="container-fluid" id="storage_screen" style="margin-top:0; padding-top:0;display: ">
+        <div class="card border-dark mb-3">
+            <div class="card-header"><i class="fa fa-hdd"></i> Masstech Cache</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h6 class="card-title underline">Media Root</h6>
+                            <div class="row">
+                                <div class="col">Cache drive</div>
+                                <div class="col"><span id="cacheDrive"></span><span id="cache2"></span></div>
+                            </div>
+                            <div class="row">
+                                    <div class="col">Cache size</div>
+                                    <div class="col"><span id="cacheCapacity"></span> GB</div>
+                            </div>
+                            <div class="row">
+                                    <div class="col">Cache free</div>
+                                    <div class="col"><span id="cacheFree"></span> GB</div>
+                            </div>
+                            <div class="row">
+                                    <div class="col">Cache used</div>
+                                    <div class="col"><span id="cacheUsed"></span>  GB <span id="cacheDriveUsage_b" class="badge badge-pill badge-light">(<span id="cacheDriveUsage"></span> % full)</span></div>
+                            </div>
+                            <div class="row">
+                                    <div class="col"><label for="selectCache" style="float:left; line-height:2">Select drive: </label></div>
+                                    <div class="col"><select id="selectCache" class="form-control form-control-sm" style="max-width:50px"></select></div>
+                            </div>
+                    </div>
+                    <div class="col">
+                        <h6 class="card-title underline">Proxy Root</h6>
+                        <div class="row">
+                            <div class="col">Proxy Cache drive</div>
+                            <div class="col"><span id="cachepDrive"></span><span id="cache2"></span></div>
+                        </div>
+                        <div class="row">
+                                <div class="col">Proxy Cache size</div>
+                                <div class="col"><span id="cachepCapacity"></span> GB</div>
+                        </div>
+                        <div class="row">
+                                <div class="col">Proxy Cache free</div>
+                                <div class="col"><span id="cachepFree"></span> GB</div>
+                        </div>
+                        <div class="row">
+                                <div class="col">Proxy Cache used</div>
+                                <div class="col"><span id="cachepUsed"></span>  GB <span id="cachepDriveUsage_b" class="badge badge-pill badge-light">(<span id="cachepDriveUsage"></span> % full)</span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                    <label class="custom-control custom-checkbox" for="proxySame" id="proxySame_l">
+                                        <input type="checkbox" class="custom-control-input" id="proxySame" checked >
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-label" style="padding-top:3px;">Proxy Cache is the same as Main Cache</span>
+                                    </label>
+                                <!-- <input type="checkbox" checked id="proxySame" style="float:left;margin-top:5px"> <label style="float:left; line-height:2" for="proxySame" id="proxySame_l">Proxy Cache is the same as Main Cache</label><span ></span> -->
+                                <select id="selectpCache" class="form-control form-control-sm hide" style="max-width:50px;" disabled></select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        &nbsp;
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label class="custom-control custom-checkbox" style="width: 30%">
+                            <input type="checkbox" class="custom-control-input" id="save_cache_snapshot" checked >
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-label" style="padding-top:3px;"><b>Save Cache space snapshot even if not creating a storage</b></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card border-dark mb-3">
+                <div class="card-header"><i class="fa fa-server"></i> Disk Storage Information</div>
+                <div class="card-body">
+                    <div class="row" id="storage_login">
+                        <div class="col"><label for="storage_ip">IP:</label></div>
+                        <div class="col"><input type="text" id="storage_ip" class="form-control input-sm form-control-sm"></div>
+                        <div class="col"><label for="storage_user">User:</label></div>
+                        <div class="col"><input type="text" id="storage_user" class="form-control input-sm form-control-sm"></div>
+                        <div class="col"><label for="storage_pass">Password:</label></div>
+                        <div class="col"><input type="text" id="storage_pass" class="form-control input-sm form-control-sm"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label for="storageType">Storage Type:</label></div>
+                        <div class="col">
+                            <select id="storageType" name="storageType" class="form-control form-control-sm style-select">
+                                <option value="Internal" selected>Internal</option>
+                                <option value="SAN">SAN</option>
+                                <option value="NAS">NAS</option>
+                            </select>
+                        </div>
+                        <div class="col"><label for="storageVendor">Storage Vendor</label></div>
+                        <div class="col">
+                            <select id="storageVendor" class="form-control form-control-sm style-select">
+                                <option value=""></option>
+                                <option value="IBM" data-chained="SAN">IBM</option>
+                                <option value="HP" data-chained="SAN">HP</option>
+                                <option value="Dell" data-chained="SAN">Dell</option>
+                                <option value="Isilon" data-chained="NAS">Isilon</option>
+                                <option value="Media Grid" data-chained="NAS">Media Grid</option>
+                            </select>
+                        </div>
+                        <div class="col"><label for="storageModel">Storage Model</label></div>
+                        <div class="col">
+                            <select id="storageModel" class="form-control form-control-sm style-select">
+                                <option value=" " data-chained="xxx"></option>
+                                <option value="V3700" data-chained="IBM">V3700</option>
+                                <option value="V5000" data-chained="IBM">V5000</option>
+                                <option value="DS3512" data-chained="IBM">DS3512</option>
+                                <option value="DS4000" data-chained="IBM">DS4000</option>
+                                <option value="MSA 1040" data-chained="HP">MSA 1040</option>
+                                <option value="SCv2000" data-chained="Dell">SCv2000</option>
+                            </select>
+                        </div>
+                        <div class="col"><label for="isiscsi">iSCSI</label></div>
+                        <div class="col">
+                            <select id="isiscsi" class="form-control form-control-sm style-select">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label for="s_mt">Machine Type</label></div>
+                        <div class="col"><input type="text" id="s_mt" class="form-control input-sm form-control-sm"></div>
+                        <div class="col"><label for="s_sn">Serial Number</label></div>
+                        <div class="col"><input type="text" id="s_sn" class="form-control input-sm form-control-sm"></div>
+                        <div class="col"><label for="s_frm">Controller Firmware</label></div>
+                        <div class="col"><input type="text" id="s_frm" class="form-control input-sm form-control-sm"></div>
+                        <div class="col"><label for="s_raid">RAID Type</label></div>
+                        <div class="col">
+                            <select id="s_raid" class="form-control form-control-sm style-select">
+                                <option value=""></option>
+                                <option value="RAID-0">RAID-0</option>
+                                <option value="RAID-1">RAID-1</option>
+                                <option value="RAID-3">RAID-3</option>
+                                <option value="RAID-5">RAID-5</option>
+                                <option value="RAID-6">RAID-6</option>
+                                <option value="RAID-10">RAID-10</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label for="s_luns">Number of Luns</label></div>
+                        <div class="col"><input type="text" id="s_luns" class="form-control input-sm form-control-sm"></div>
+                        <div class="col"><label for="s_disks">Number of Disks</label></div>
+                        <div class="col"><input type="text" id="s_disks" class="form-control input-sm form-control-sm"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+        </div>
+        <div class="input-group">
+            <div id="storageSwitch" class="btn-group">
+                <a class="btn btn-success btn-sm notActive" data-toggle="host" data-title="Y"><i class="fas fa-check"></i> Confirm</a>
+                <a class="btn btn-warning btn-sm notActive" data-toggle="host" data-title="X"><i class="fas fa-times"></i> Skip</a>
+            </div>
+            <input type="hidden" name="storage" id="storage">
+        </div> 
+</div>
+<!-- CACHE INFORMATION -->
+<!-- REMOTE INFORMATION -->
+<div class="container-fluid" style="margin-top:0; padding-top:0;display: "  id="remote_screen">
+    <div class="card border-dark mb-3">
+        <div class="card-header"><i class="fas fa-external-link-alt"></i> Remote Servers</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <h6 class="card-title underline">Connection</h6>
+                            <div class="row">
+                                <div class="col-4"><label for="remote_ip" class="col">IP:</label></div>
+                                <div class="col"><input type="text" id="remote_ip" class="form-control  form-control-sm" value=""></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><label for="remote_user" class="col">User:</label></div>
+                                <div class="col"><input type="text" id="remote_user" class="form-control  form-control-sm" value="administrator"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"><label for="remote_pass" class="col">Password:</label></div>
+                                <div class="col"><input type="password" id="remote_pass" class="form-control  form-control-sm" value="Masstech1"></div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <!-- <div class="row"><div class="col"><button class="btn btn-light btn-sm" id="openHosts">Open hosts</button></div></div>-->
+                            <div class="row"><div class="col"><button class="btn btn-light btn-sm" id="viewSaved" style="display: ;">Saved servers</button></div></div> 
+                            <div class="row"><div class="col"><button id="get_remote" class="btn btn-sm btn-light" style="width:100%">Run</button></div></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col">
+                                <span id="remote_errors"></span>
+                            </div>
+                        </div>
+                </div>
+                <div class="col" id="savedServers">
+                <!--<div class="row">
+                    <div class="col">
+                            <button class="btn btn-sm btn-link" id="closeSavedServers">Close</button>
+                            &nbsp;
+                    </div>-->
+                    <h6 class="card-title underline">Saved Servers</h6>
+                    <div class="row">
+                        <div class="col" id="savedServersList"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- REMOTE INFORMATION -->
+<!-- GENERATE SCREEN -->
+<div class="container-fluid" style="margin-top:0; padding-top:0;display: " id="generate_screen"> 
+    <div class="card border-dark mb-3">
+    <div class="card-header"><i class="far fa-file-code"></i> Build System</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <h6 class="card-title underline">System Information</h6>
+                    <div class="row">
+                        <div class="col-2"><label for="site">Site:</label></div>
+                        <div class="col"><input class="form-control form-control-sm" placeholder="ex: KOMO" id="site"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"><label for="system">Name:</label></div>
+                        <div class="col"><input class="form-control form-control-sm" placeholder="ex: MassStore V8" id="system" value="MassStore"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h6 class="card-title underline">Host Server</h6>
+                    <div class="row">
+                        <div class="col-2"><label for="name">Type:</label></div>
+                        <div class="col">
+                            <select class="form-control form-control-sm col style-select" id="name">
+                                <option value="Application Server">Application Server</option>
+                                <option value="Database Server">Database Server</option>
+                                <option value="Datamover Server">Datamover Server</option>
+                                <option value="Transcoder Server">Transcoder Server</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"><label for="systemType">Role:</label></div>
+                        <div class="col">
+                            <select id="systemType" class="form-control form-control-sm col style-select">
+                                <option value="All In One" data-chained="Application Server">All In One</option>
+                                <option value="Application" data-chained="Application Server">Application</option>
+                                <option value="Database" data-chained="Database Server">Database</option>
+                                <option value="DataMover" data-chained="Datamover Server">Datamover</option>
+                                <option value="Transcoder" data-chained="Transcoder Server">Transcoder</option>
+                                <option value="Application&Database" data-chained="Application Server">Application & Database</option>
+                                <option value="Application&Transcoder" data-chained="Application Server">Application & Transcoder</option>
+                                <option value="DataMover&Transcoder" data-chained="Datamover Server">Datamover & Transcoder</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h6 class="card-title underline">Generate sources</h6>
+                    <div class="row">
+                        <div class="col">
+                            <!-- <input type="checkbox" id="generate_tape_inf"><label for="generate_tape_inf">Generate Tape Library Information</label> -->
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="generate_tape_inf">
+                                <label class="custom-control-label" for="generate_tape_inf" style="padding-top:2px;">Tape Library Information</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <!-- <input type="checkbox" id="generate_cache_inf" checked><label for="generate_cache_inf">Generate Cache Information</label> -->
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" checked id="generate_cache_inf">
+                                <label class="custom-control-label" for="generate_cache_inf" style="padding-top:2px;">Cache Information</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <!-- <input type="checkbox" id="generate_storage_inf"><label for="generate_storage_inf">Generate Storage Information</label> -->
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="generate_storage_inf">
+                                <label class="custom-control-label" for="generate_storage_inf" style="padding-top:2px;">Storage Information</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <!-- <input type="checkbox" id="generate_switch_inf"><label for="generate_fiber_inf">Generate Fiber Switch Information</label> -->
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="generate_switch_inf">
+                                <label class="custom-control-label" for="generate_switch_inf" style="padding-top:2px;">Fiber Switch Information</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h6 class="card-title underline">Generate and Upload</h6>
+                    <div class="row">
+                        <div class="col">
+                        <div class="btn-group" role="group">
+                            <button class="btn btn-outline-light btn-sm disabled" onClick="generateCSV();" id="generateBtn" disabled>Generate</button>
+                            <button class="btn btn-outline-light btn-sm disabled" onClick="uploadSimple();" id="uploadSimpleBtn" disabled>Upload single file</button>
+                        </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-1"><button class="btn btn-link" type="button" id="saveFile"><i class="far fa-folder-open"></i></button></div>
+                                <div class="col"><input class="form-control form-control-sm" placeholder="C:\Versions\SysInfo\site.zip" id="filePath" value="c:\Versions\SysInfo\site.zip"></div>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" checked id="includehost">
+                                <label class="custom-control-label" for="includehost" style="padding-top:2px;">Include this server</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h6 class="card-title underline">Multiple File Upload</h6>
+                            <div class="btn-group" role="group">
+                                <button id="selectMultiple" class="btn btn-outline-light btn-sm">Select Files</button> 
+                                <button id="uploadMultiple" class="btn btn-outline-light btn-sm">Upload Selected</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col" id="multipleFileUpload">
+                            <ol id="filesToUpload">
+
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                <h6 class="card-title underline">Upload Destinations</h6>
+                <div class="row">
+                        <div class="col">
+                            <!-- <input type="checkbox" id="ui_debug"><label for="ui_debug"> <i class="fas fa-bug"></i> Include Debug Information</label> -->
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="ui_debug">
+                                <label class="custom-control-label" for="ui_debug" style="padding-top:2px;"><i class="fas fa-bug"></i> Include Debug Information</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <!-- <input type="checkbox" id="ftp_upload"><label for="ftp_upload"> <i class="fas fa-upload"></i> Upload to FTP</label> -->
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="ftp_upload">
+                                <label class="custom-control-label" for="ftp_upload" style="padding-top:2px;"><i class="fas fa-upload"></i> Upload to FTP</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <!-- <input type="checkbox" id="ftp_dropbox" checked><label for="ftp_dropbox"> <i class="fab fa-dropbox"></i> Upload to Dropbox</label> -->
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="ftp_dropbox" checked>
+                                <label class="custom-control-label" for="ftp_dropbox" style="padding-top:2px;"><i class="fab fa-dropbox"></i> Upload to Dropbox</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                        <h6 class="card-title underline">Upload Paths</h6>
+                    <div class="row">
+                        <div class="col"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="ftp_upload_path">FTP upload path: /_Upload/</label> <input id="ftp_upload_path" value="" placeholder="Leave blank or enter a new folder" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="dbx_upload_path">DropBox upload path: /_Upload/</label> <input id="dbx_upload_path" value="" placeholder="Leave blank or enter a new folder" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="generate"></div>
+            <img id="my-preview"/>
+    </div>
+<!-- GENERATE SCREEN -->
+<div class="container-fluid" style="margin-top:0; padding-top:0;">
+<!-- A remote server -->
+<div id="remote_server_${i}" class="remoteServer">
+    <div class="card border-dark mb-3">
+        <div class="card-header" style="padding-top: 0;padding-bottom: 0">
+            <div class="row">
+                <div class="col-1">
+                    <button type="button" class="hideRemote btn btn-light" id="hideRemote_${i}">Show/Hide</button>
+                </div>
+                <div class="col form-inline">
+                        <label for="remote_${i}_name">Name: </label>&nbsp;<input type="text" class="form-control form-control-sm" id="remote_${i}_name" value="${data.remoteType}">&nbsp; ${data.os_hostname} (${data.net_ip})
+                </div>
+                <div class="col form-inline">
+                    <label for="remote_${i}_type">Type:</label>&nbsp;
+                    <select id="remote_${i}_type" class="form-control form-control-sm style-select">
+                        <option value="${data.remoteType}" selected>${data.remoteType}</option>
+                        <option value="Application Server">Application Server</option>
+                        <option value="Database Server">Database Server</option>
+                        <option value="Datamover Server">Datamover Server</option>
+                        <option value="Transcoder Server">Transcoder Server</option>
+                    </select> &nbsp; 
+                    <label for="remote_${i}_role">Role:</label> &nbsp;
+                    <select id="remote_${i}_role" class="form-control form-control-sm style-select">
+                        <option value="${data.remoteRole}" selected>${data.remoteRole}</option>
+                        <option value="All In One">All In One</option>
+                        <option value="Application">Application</option>
+                        <option value="Database">Database</option>
+                        <option value="DataMover">Datamover</option>
+                        <option value="Transcoder">Transcoder</option>
+                        <option value="Application&Database">Application & Database</option>
+                        <option value="Application&Transcoder">Application & Transcoder</option>
+                        <option value="DataMover&Transcoder">Datamover & Transcoder</option>
+                    </select>
+                </div>
+                <div class="col-1">
+                    <button type="button" class="btn btn-danger delRemote" id="delRemote_${i}">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div id="remote_server_${i}_info" style="display:" class="card-body">
+            <div class="row">
+                <div class="col">
+                    <h6 class="card-title underline">CPU</h6>
+                        <div class="row">
+                            <div class="col-3">Manufacturer</div>
+                            <div class="col"><span id="remote_${i}_cpu_manufacturer">${data.cpu_manufacturer}</span></div>
+                            <div class="col-2">Speed</div>
+                            <div class="col"><span id="remote_${i}_cpu_speed">${data.cpu_speed}</span> GHz</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">Brand</div>
+                            <div class="col"><span id="remote_${i}_cpu_brand">${data.cpu_brand}</span></div>
+                            <div class="col-2">Cores #</div>
+                            <div class="col"><span id="remote_${i}_cpu_cores">${data.cpu_cores}</span> cores</div>
+                        </div>
+                </div>
+                <div class="col">
+                    <h6 class="card-title underline">Network</h6>
+                    <p class="card-text">
+                        Name - <span id="remote_${i}_net_name">${data.net_name}</span><br>
+                        IP - <span id="remote_${i}_net_ip">${data.net_ip}</span><br>
+                    </p>
+                </div>
+                <div class="col">
+                    <h6 class="card-title underline">System</h6>
+                    <div class="row">
+                        <div class="col">S/N - <span id="remote_${i}_sys_sn">${data.sys_sn}</span></div>
+                        <div class="col">Model - <span id="remote_${i}_sys_model">${data.sys_model}</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Base S/N - <span id="remote_${i}_base_sn">${data.base_sn}</span></div>
+                        <div class="col">Base Model - <span id="remote_${i}_base_model">${data.base_model}</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="col">
+                        <h6 class="card-title underline">OS drive</h6>
+                        <div class="row">
+                            <div class="col">Drive - <span id="osDrive">C:</span></div>
+                            <div class="col">Drive size - <span id="remote_${i}_osDriveCapacity">${data.OSsize}</span> Gb</div>
+                        </div>
+                        <div class="row">
+                            <div class="col">Drive free - <span id="remote_${i}_osDriveFree">${data.OSfree}</span> Gb</div>
+                            <div class="col">Drive used - <span id="remote_${i}_osDriveUsed">${data.OSused}</span> Gb <span id="remote_${i}_osDriveUsage_b" class="badge badge-pill badge-light">(<span id="remote_${i}_osDriveUsage">${data.OSusage}</span> % full)</span></div>
+                        </div>
+                </div>
+                <div class="col">
+                    <h6 class="card-title underline">OS</h6>
+                    <div class="row">
+                        <div class="col">Distribution - <span id="remote_${i}_os_distro">${data.os_distro}</span></div>
+                        <div class="col">Hostname - <span id="remote_${i}_os_hostname">${data.os_hostname}</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Architecture - <span id="remote_${i}_os_arch">${data.os_arch}</span></div>
+                        <div class="col">Power Shell - <span id="remote_${i}_powershell">${data.powershell}</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><input id="remote_${i}_selectUser" class="form-control form-control-sm" placeholder="Username" value="${user}"></div>
+                        <div class="col"><input id="remote_${i}_selectPassword" class="form-control form-control-sm" placeholder="Password" value="${password}"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h6 class="card-title underline">Memory</h6>
+                    <div class="row">
+                        <div class="col">Total - <span id="remote_${i}_ram_total">${data.ram_total}</span> GB</div>
+                        <div class="col">Free  - <span id="remote_${i}_ram_free">${data.ram_free}</span> GB</div>
+                        <div class="col">Used  - <span id="remote_${i}_ram_used">${data.ram_used}</span> GB</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="col" id="remote_${i}_softwareTab">
+                    <h6 class="card-title underline">Masstech Software</h6>
+                    <div class="row">
+                        <div class="col">MassStore - <span id="remote_${i}_msVersion">${data.msVersion}</span></div>
+                        <div class="col">WFE - <span id="remote_${i}_wfe">${data.wfe}</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Transcoder - <span id="remote_${i}_hqs">${data.hqs}</span></div>
+                        <div class="col">Updater - <span id="remote_${i}_mtgS"></span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Instances # - <span id="remote_${i}_hqs_i">${data.hqsi}</span></div>
+                        <div class="col">iNews plugin - <span id="remote_${i}_inews"></span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Profile - <span id="remote_${i}_hqsProfile">${data.hqsProfile}</span></div>
+                        <div class="col">ENPS plugin - <span id="remote_${i}_enps"></span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">MassStore 7 - <span id="remote_${i}_ms7"></span></div>
+                        <div class="col">AAF Processor - <span id="remote_${i}_aaf">${data.aaf}</span></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h6 class="card-title underline">Database</h6>
+                    <p class="card-text">
+                        Oracle - <span id="remote_${i}_oracle">${data.oracle}</span><br>
+                        Oracle Scripts - <span id="remote_${i}_db_backup">${data.DBbackup}</span> | <span id="remote_${i}_db_clean">${data.DBClean}</span> | <span id="remote_${i}_db_second">${data.DBsecond}</span> | <span id="remote_${i}_db_second_location">${data.DBsecondlocation}</span><br>
+                        PostgreSQL - <span id="remote_${i}_pg">${data.pgPath}</span><br>
+                        PostgreSQL backup - <span id="remote_${i}_pg_backup">${data.pgVersion}</span> | <span id="remote_${i}_pg_second">${data.pgSecond}</span> | <span id="remote_${i}_pg_second_location">${data.pgSecondLocation}</span><br>
+                    </p>
+                </div>
+                <div class="col">
+                    <h6 class="card-title underline">3rd party</h6>
+                    <div class="row">
+                        <div class="col">
+                                Tomcat - <span id="remote_${i}_tomcat">${data.tomcat}</span><br>
+                                MongoDB - <span id="remote_${i}_mongo"></span><br>
+                                OracleAS - <span id="remote_${i}_oracleas"></span><br>
+                                Server version - <span id="remote_${i}_snfsServer"></span><br>
+                                Client Version - <span id="remote_${i}_snfsCli"></span><br>
+                                S/N - <span id="remote_${i}_snfsSN"></span><br>
+                                Clients # - <span id="remote_${i}_snfsNoClients"></span><br>
+                        </div>
+                        <div class="col">
+                            <div class="row" >
+                                <div class="col" style="text-align:center">
+                                    <span id="remote_${i}_AAC_b" class="badge badge-pill badge-secondary">AAC</span> <span id="remote_${i}_AAC" class="hide"></span><br>
+                                    <span id="remote_${i}_AVC-Intra_b" class="badge badge-pill badge-secondary">AVC-Intra</span> <span class="hide" id="remote_${i}_AVC-Intra"></span><br>
+                                    <span id="remote_${i}_DolbyE_b" class="badge badge-pill badge-secondary">DolbyE</span> <span class="hide" id="remote_${i}_DolbyE"></span><br>
+                                    <span id="remote_${i}_DVPRO_b" class="badge badge-pill badge-secondary">DVPRO</span> <span class="hide" id="remote_${i}_DVPRO"></span><br>
+                                    &nbsp;<span id="remote_${i}_DVPRO_HD_b" class="badge badge-pill badge-secondary">DVPRO HD</span> <span class="hide" id="remote_${i}_DVPRO_HD"></span>
+                                </div>
+                                <div class="col" style="text-align:center">
+                                    <span id="remote_${i}_H264_b" class="badge badge-pill badge-secondary">H264</span> <span class="hide" id="remote_${i}_H264"></span><br>
+                                    <span id="remote_${i}_H264_and_AAC_b" class="badge badge-pill badge-secondary">H264 & AAC</span> <span class="hide" id="remote_${i}_H264_and_AAC"></span><br>
+                                    <span id="remote_${i}_JPEG2000_b" class="badge badge-pill badge-secondary">JPEG2K</span> <span class="hide" id="remote_${i}_JPEG2000"></span><br>
+                                    <span id="remote_${i}_Mpeg2_b" class="badge badge-pill badge-secondary">MPEG 2</span> <span class="hide" id="remote_${i}_Mpeg2"></span><br>
+                                    <span id="remote_${i}_codecsFolder_b" class="badge badge-pill badge-secondary">Folder</span> &nbsp;<span class="hide" id="remote_${i}_codecsFolder"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- A remote server -->
+</div>
+&nbsp;
+</body>
