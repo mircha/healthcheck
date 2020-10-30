@@ -1,3 +1,5 @@
 {
-  ['test', 'Masstech', 'Spectra']
+  tag: 'test',
+  tag: 'MassStore',
+  tag: 'Spectra'
 }
