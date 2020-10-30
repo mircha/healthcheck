@@ -1,5 +1,5 @@
 {
-  "test",
-  "MassStore",
-  "Spectra"
+  "test":"test",
+  "MassStore":"MassStore",
+  "Spectra":"Spectra"
 }
