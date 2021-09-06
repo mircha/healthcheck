@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css">
+    <script src="https://unpkg.com/js-datepicker"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/slate/bootstrap.min.css" integrity="sha384-8iuq0iaMHpnH2vSyvZMSIqQuUnQA7QM+f6srIdlgBrTSEyd//AWNMyEaSF2yPzNQ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="icon" type="image/svg+xml" href="./assets/cloud-solid.svg">
+    <!-- load local if online not available-->
+<!--
+    <script type="text/javascript" src="./assets/jquery.min.js"></script>
+    <script src="./assets/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./assets/moment.min.js"></script>
+    <link rel="stylesheet" href="./assets/datepicker.min.css">
+    <script src="./assets/datepicker.min.js"></script>
+    <link href="./assets/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/bootstrap.min.css">
+    <script src="./assets/marked.min.js"></script>
+-->
+<style>
+    .bg-dark{
+        background: #2E3748!important;
+    }
+    body{
+        background: #2E3748!important;
+    }
+    .bg-primary{
+        background: #353F51!important;
+    }
+    .card{
+        background: #353F51!important;
+    }
+    body{
+        color: #D3D3D3!important;
+    }
+    .text-light{
+        color: #aaa!important;
+    }
+</style>
+<title>Ascent</title>
+</head>
+
+<body style="overflow: hidden">
+    <div class="row">
+        <div id="menu_bar" class="col bg-primary" >
+            <div class="row" style="vertical-align: bottom;">
+                <div class="col-3">
+                    <h5 style="text-align: left; color: #D3D3D3; " >
+                        <img src="./assets/logo_4.svg" alt="" style="width:auto;max-width:74px;">  <sub style="font-size: large;">Ascent</sub>
+                    </h5>
+                </div>
+                <div class="col"></div>
+                <div class="col-md-8 col-lg-5">
+                    <div class="row">
+                        <div class="col" style="padding-top: 15px; text-align: center;"><a href="/" style="text-decoration: none;font-size:large; color:lightgray"><i class="fa fa-home"></i> <br>Home</a></div>
+                        <div class="col" style="padding-top: 15px; text-align: center;"><a href="#" style="text-decoration: none;font-size:large; color:lightgray" id="add"><i class="fa fa-plus" style="font-size: large;"></i> <br>Add</a></div>
+                        <div class="col" style="padding-top: 15px; text-align: center;"><a href="#" style="text-decoration: none;font-size:large; color:lightgray" id="view"><i class="fa fa-exchange"></i> <br>Migrating</a></div>
+                        <div class="col" style="padding-top: 15px; text-align: center;"><a href="#" style="text-decoration: none;font-size:large; color:lightgray" id="completed"><i class="fa fa-check"></i> <br>Completed</a></div>
+                        <div class="col" style="padding-top: 15px; text-align: center;"><a href="#" style="text-decoration: none;font-size:large; color:lightgray" id="history"><i class="fa fa-history"></i> <br>Log</a></div>
+                        <div class="col" style="padding-top: 15px; text-align: center;"><a href="#" style="text-decoration: none;font-size:large; color:lightgray" id="settings"><i class="fa fa-wrench"></i> <br>Settings</a></div>
+                        <!-- <div class="col" style="padding-top: 15px; text-align: center;"><a href="#" style="text-decoration: none;font-size:large; color:lightgray" id="help"><i class="fa fa-question" style="font-size: large;"></i> <br> Help</a></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col bg-dark container" id="content">
+            <div class="row" style="text-align:center">
+                <div class="col">
+                    <h5 style="padding:25px">&nbsp;</h5>
+                </div>
+            </div>
+            <div class="container-fluid" style="width:100%">
+                <div class="row">
+                    <div class="col">
+                        <div class="card border-dark" >
+                            <div class="card-body">
+                                <h3 class="card-title">Migration</h3>
+                                <div class="row">
+                                    <div class="col-3"><h6 class="card-title">Started on</h6></div>
+                                    <div class="col"><p class="card-text"><span id="startDate"></span></p></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3"><h6 class="card-title">Migrating</h6></div>
+                                    <div class="col"><p class="card-text"><span id="tapes_running"></span></p></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3"><h6 class="card-title">Queue</h6></div>
+                                    <div class="col"><p class="card-text"><span id="tapes_queue"></span></p></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3"><h6 class="card-title">Trigger size</h6></div>
+                                    <div class="col"><p class="card-text"><span id="triggered_transfers"></span></p></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card border-dark" >
+                            <div class="card-body">
+                                <h3 class="card-title">Tapes</h3>
+                                <div class="row">
+                                    <div class="col"><h6 class="card-title">Total tapes</h6></div>
+                                    <div class="col"><p class="card-text"><span id="tapes"></span></p></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><h6 class="card-title">Tapes completed</h6></div>
+                                    <div class="col"><p class="card-text"><span id="tapes_migrated"></span></p></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><h6 class="card-title">Completed Average</h6></div>
+                                    <div class="col"><p class="card-text"><span id="tape_average"></span></p></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><h6 class="card-title">Completion percent</h6></div>
+                                    <div class="col"><p class="card-text"><span id="tape_completion">11%</span></p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card border-dark" >
+                            <div class="card-body">
+                                <h3 class="card-title">Instances</h3>
+                                <div class="row">
+                                    <div class="col"><h6 class="card-title">Total instances</h6></div>
+                                    <div class="col"><p class="card-text"><span id="instances"></span></p></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><h6 class="card-title">Instances Migrated</h6></div>
+                                    <div class="col"><p class="card-text"><span id="instances_migrated"></span></p></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><h6 class="card-title">Migrated Average</h6></div>
+                                    <div class="col"><p class="card-text"><span id="instance_average"></span></p></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col"><h6 class="card-title">Completion percent</h6></div>
+                                    <div class="col"><p class="card-text"><span id="instance_completion">11%</span></p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $('#add, #add_small').on('click',(e)=>{
+        e.preventDefault();
+        $("#content").load('/add')
+    })
+    $('#view, #view_small').on('click',(e)=>{
+        e.preventDefault();
+        $("#content").load('/view')
+    })
+    $('#completed, #completed_small').on('click',(e)=>{
+        e.preventDefault();
+        $("#content").load('/completed')
+    })
+    $('#history, #history_small').on('click',(e)=>{
+        e.preventDefault();
+        $("#content").load('/history')
+    })
+    $('#settings, #settings_small').on('click',(e)=>{
+        e.preventDefault();
+        $("#content").load('/settings')
+    })
+    $('#help, #help_small').on('click',(e)=>{
+        e.preventDefault();
+        $("#content").load('/help')
+    })
+    $("#toggle_menu, #toggle_menu_small").on('click', (e)=>{
+        e.preventDefault();
+        $("#menu_bar").toggle()
+        $("#menu_bar_small").toggle()
+    })
+    $(document).ready(() => {
+        $.get("http://localhost:3000/dashboard", function (data) {
+            var settings = data[0];
+            var completed = data[1];
+            var migrating = data[2];
+            //var migrating_tape = data[3];
+            var migrating_tape = []
+            for (i = 0; i < settings.triggeredTapes; i++) {
+                migrating_tape.push(data[data.length - i - 1].runningTape)
+            }
+            $("#tapes").text(settings.tapes)
+            $("#instances").text(settings.instances)
+            $("#triggered_transfers").text(settings.transfers * settings.triggeredTapes + ' transfers from ' + settings.triggeredTapes + ' tapes (' + settings.transfers + ' per tape x '+settings.triggeredTapes+' tapes)')
+            $("#startDate").text(moment(settings.startDate).format('Do of MMMM YYYY') + ' (' + moment().diff(settings.startDate, "days") + ' days ago)')
+            $("#tapes_migrated").text(`${completed.completedTapes}`)
+            $("#instances_migrated").text(`${completed.instancesMigrated}`);
+            $("#tapes_running").text(`${migrating_tape.join(", ")}`);
+            $("#tapes_queue").text(`Another ${migrating.runningTapes - settings.triggeredTapes} tapes are in the queue.`);
+            $("#tape_average").text(`${(completed.completedTapes/moment().diff(settings.startDate, "days")).toFixed(2)} tapes/day`);
+            $("#instance_average").text(`${(completed.instancesMigrated/moment().diff(settings.startDate, "days")).toFixed(0)} instances/day`);
+            var tapeCompletion = ((completed.completedTapes * 100) / settings.tapes).toFixed(1);
+            var instanceCompletion = ((completed.instancesMigrated * 100) / settings.instances).toFixed(1);
+            $("#tape_completion").text(tapeCompletion + " %")
+            $("#instance_completion").text(instanceCompletion + " %")
+        })
+    })
+</script>
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #3a3f44;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+</style>
