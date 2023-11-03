@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<head>
+    <title>Cloud Ascent - the home of QRate</title> <!--below 60 characters-->
+    <meta charset="utf-8">
+    <meta name="description" content="Cloud Ascent - the home of QRate"> <!--below 120 characters-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+    <script src="cards.js" defer></script>
+    <script src="problems.js" defer></script>
+    <link rel="stylesheet" href="./styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+            let light = true;
+                
+            document.addEventListener("DOMContentLoaded", function () {
+                th = document.getElementById("theme");
+                th.addEventListener("click", () => {
+                    if (light) { 
+                        th.innerHTML = '<i class="far fa-lightbulb"></i>'; 
+                        document.documentElement.style.setProperty('--primary-100', '#F5F5F5');
+                        document.documentElement.style.setProperty('--primary-200', '#d6d6d6');
+                        document.documentElement.style.setProperty('--primary-300', '#929292');
+                        document.documentElement.style.setProperty('--accent-100', '#811e9854');
+                        document.documentElement.style.setProperty('--accent-200', '#4836755e');
+                        document.documentElement.style.setProperty('--text-100', '#ccc');
+                        document.documentElement.style.setProperty('--text-200', '#666');
+                        document.documentElement.style.setProperty('--bg-100', '#0d0d0f');
+                        document.documentElement.style.setProperty('--bg-200', '#1e1e1e');
+                        document.documentElement.style.setProperty('--bg-300', '#cccccc'); 
+                        document.documentElement.style.setProperty('--card-bg', 'linear-gradient(170deg, #3d3d46 -17.62%, #1e1e25 44.86%)');
+                        document.documentElement.style.setProperty('--card-body-bg', 'rgba(16, 16, 16, 0.33)');
+                        light = false;
+                    }
+                    else { 
+                        th.innerHTML = '<i class="fas fa-lightbulb"></i>'; 
+                        document.documentElement.style.setProperty('--primary-100', '#F5F5F5');
+                        document.documentElement.style.setProperty('--primary-200', '#d6d6d6');
+                        document.documentElement.style.setProperty('--primary-300', '#929292');
+                        document.documentElement.style.setProperty('--accent-100', '#E0E0E0');
+                        document.documentElement.style.setProperty('--accent-200', '#7f7f7f');
+                        document.documentElement.style.setProperty('--text-100', '#333333');
+                        document.documentElement.style.setProperty('--text-200', '#5c5c5c');
+                        document.documentElement.style.setProperty('--bg-100', '#FFFFFF');
+                        document.documentElement.style.setProperty('--bg-200', '#f5f5f5');
+                        document.documentElement.style.setProperty('--bg-300', '#cccccc'); 
+                        document.documentElement.style.setProperty('--card-bg', 'var(--bg-200)');
+                        document.documentElement.style.setProperty('--card-body-bg', 'var(--bg-100)');
+                        light = true;
+                    }
+                })
+            })
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // var tl = gsap.timeline( {repeat:-1, repeatDelay: 2} ); // <- This is where the repeat is set
+            // gsap.from("#hero_img", {duration: 2, x: 0, y: 25, opacity: 0, ease: "linear", delay: 0.5, stagger: 0.5, scale: 0.5, force3D: true, rotation: 360, transformOrigin: "50% 100%", onComplete: function() {console.log("done");}});
+            //gsap.to(".svg, .svg2",{duration: 2, x:10, y:10, stagger:0.25, ease: "bounce", repeat:-1});
+        });
+    </script>
+</head>
+<!-- MENU -->
+<div class="container-fluid" id="menu">
+    <div class="row d-flex align-items-center">
+        <div class="col-1">
+            <img src="logo_cloud_2-colour.png" alt="Logo" class="logo">
+        </div>
+        <div class="col d-flex align-items-center justify-content-end">
+            <ul>
+                <li>Company</li>
+                <li>Product</li>
+                <li>Resources</li>
+                <li>Support</li>
+                <li>Blog</li>
+                <li><button class="btn" id="theme"><i class="fas fa-lightbulb"></i></button></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- MENU -->
+<!-- HERO -->
+<div class="container text-center my-5 py-5" id="hero">
+    <h1 class="my-5">Do More For Less <br> From Anywhere</h1>
+    <p class="my-5">Introducing a fully-integrated media management tool that solves your complex migration challenges, keeps pace with industry demands and provides long-term viability in our ever-changing world.</p>
+    <div style="display: flex; justify-content: center;" class="my-5">
+        <div style="display: flex; border: 2px solid var(--text-100);">
+            <input type="text" class="form-control" style="margin: 2px; width: 200px;" placeholder="you@company.com"><button class="btn btn-primary" style="border-radius: 0;">Book a demo</button>
+        </div>
+    </div>
+
+    <div class="container-fluid my-5 py-5">
+        <div class="image-container" style="position: relative;">
+            <div class="box">
+                <img id="hero_img" class="box" alt="Product" src="s1.JPG">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- HERO -->
+
+<!-- PROBLEMS -->
+<div class="container text-center mt-5 py-5" id="problems" style="height: 500px;">
+    <div class="row mt-5 pt-5">
+        <div class="col-auto">
+          <ul>
+            <li id="gain" class="active">Gain Speed</li>
+            <li id="automate">Automate tasks</li>
+            <li id="plain">Enrich Content</li>
+            <li id="legacy">Cloud Migration</li>
+          </ul>
+        </div>
+        <div class="col right" id="problemsContainer">
+          <div id="speed">
+            <div id="speedContainer"></div>
+            <h3>Legacy Systems Struggle to Keep Pace </h3>
+            <p class="mt-5">
+                <h6><i class="fas fa-xmark"></i>  <b>Problem</b> </h6>
+                Many businesses find themselves grappling with legacy systems that are ill-equipped to meet the demands of today's fast-paced digital landscape. Outdated infrastructure and traditional server-based solutions often lead to sluggish performance, lackluster user experiences, and an inability to scale efficiently.
+            </p>
+            <p class="mt-5">
+                <h6><i class="fas fa-check"></i>  <b>Solution</b> </h6>
+                Our company specializes in delivering cutting-edge serverless cloud software that revolutionizes the way businesses operate. By leveraging the power of the cloud and server-less architecture, we empower organizations to achieve unparalleled speed, scalability, and user-centric experiences.
+            </p>
+          </div>
+          <div id="workflows">
+            <div id="workflowsContainer"></div>
+            <h3>Inefficient Workflows and Manual Processes</h3>
+            <p class="mt-5">
+                <h6><i class="fas fa-xmark"></i> <b>Problem:</b> </h6>
+                Manual workflows that not only consume valuable time and resources but also introduce the potential for human error. Automating these workflows can significantly enhance efficiency and accuracy.</p>
+            <p class="mt-5">
+                <h6><i class="fas fa-check"></i> <b>Solution:</b> </h6>
+                With our solution, we provide fully automated workflows that harness the potential of server-less computing. By automating routine tasks and processes, we free up valuable resources and ensure that operations run seamlessly and error-free.</p>
+          </div>
+          <div id="enrich">
+            <div id="enrichContainer"></div>
+            <h3>Lack of Content Enrichment and Metadata</h3>
+            <p class="mt-5">
+                <h6><i class="fas fa-xmark"></i> <b>Problem:</b> </h6>
+                Content is king, but without proper enrichment and metadata, it can become overwhelming and challenging to manage effectively. Traditional systems struggle to automatically enrich content, leaving businesses without critical insights.
+            </p>
+            <p class="mt-5">
+                <h6><i class="fas fa-check"></i> <b>Solution:</b></h6>
+                Our software employs state-of-the-art AI algorithms to automatically enrich content with valuable metadata. This not only streamlines content management but also unlocks powerful insights for better decision-making and content optimization.
+            </p>
+          </div>
+          <div id="migrate">
+            <div id="migrateContainer"></div>
+            <h3>Transitioning from Legacy Systems to the Cloud</h3>
+            <p class="mt-5">
+                <h6><i class="fas fa-xmark"></i> <b>Problem:</b></h6> 
+                Migrating content from legacy systems to the cloud can be a daunting task. Compatibility issues, data loss concerns, and downtime during migration are common challenges.
+            </p>
+            <p class="mt-5">
+                <h6><i class="fas fa-check"></i> <b>Solution:</b></h6> 
+                We specialize in seamless content migrations from a range of legacy systems. Our meticulous process ensures minimal downtime and zero data loss, enabling businesses to modernize their operations without disruption.
+            </p>
+          </div>
+        </div>
+    </div>
+</div>
+<!-- PROBLEMS -->
+<!-- Quote-->
+<blockquote class="container-fluid quote">
+    <div class="container text-center">
+        <h2 class="highlight">Our mission is to <span class="extra">democratize</span> data by making data-driven media management, easy, flexible & affordable</h2>
+    </div>
+</blockquote>
+<!-- Quote-->
+<!-- BENEFITS -> can also use wrapper-->
+<div class="container text-center wrapper2" id="benefits">
+    <div class="card box1">
+        <div class="card-body w-100 p-5">
+            <img src="s2_no_bg.svg" class="svg" loading="lazy">
+            <h4>Go <span>Server-Less</span></h4>
+            <p >Qrate is a scalable serverless enterprise Media Management solution.</p>
+        </div>
+    </div>
+    <div class="card box2">
+        <div class="card-body w-100 p-5">
+            <img src="birds3.svg" class="svg2" loading="lazy">
+            <h4><span>Seamless</span> Transition</h4>
+            We understand that digital archives are in a constant state of storage migration as they continue to grow and age. Keeping pace, ensuring longevity and offering a transparent pricing model are always part of the plan. 
+        </div>
+    </div>
+    <div class="card box3">
+        <div class="card-body w-100 p-5">
+            <!-- <img src="export.svg" class="svg2" loading="lazy"> -->
+            <object data="export.svg" class="svg" type="image/svg+xml"></object>
+            <h4>In <span>Control</span></h4>
+            Data democratization is the ability for information in a digital format to be accessible to the average end user. 
+        </div>
+    </div>
+
+    <div class="card box4">
+        <div class="card-body w-100 p-5">
+            <img src="support_3.svg" class="svg" loading="lazy">
+            <h4>Always <span>Helpful</span></h4>
+                Multi-vendor support by a team of proffesionals.
+        </div>
+    </div>
+</div>
+<!-- BENEFITS -->
+
+<div class="container-fluid quote">
+    <div class="container text-center">
+        <h2 class="highlight">The goal of data <span class="extra">democratization</span> is to allow nonspecialists to be able to gather and analyze data without requiring outside help.</h2>
+    </div>
+</div>
+
+<!-- FEATURES old-->
+<!-- <div class="container features-wrapper mt-0" id="features" style="perspective:1000px;">
+    <div class="card box">
+        <div class="card-body">
+            <div class="">
+                <i class="fat fa-photo-film"></i>
+            </div>
+            <h1>Media Management</h1>
+            <p>Placeholder text describing the feature/service</p>
+            <div class="glow"></div>
+        </div>
+    </div>
+    <div class="card box">
+        <div class="card-body">
+            <div class="w-100">
+                <i class="fat fa-users-gear"></i>
+            </div>
+            <h1>Automated Workflows</h1>
+            <p>Placeholder text describing the feature/service</p>
+            <div class="glow"></div>
+        </div>
+    </div>
+    <div class="card box">
+        <div class="card-body">
+            <div class="w-100">
+                <i class="fat fa-robot"></i>
+            </div>
+            <h1>Metadata Enrichment</h1>
+            <p>Placeholder text describing the feature/service</p>
+            <div class="glow"></div>
+        </div>
+    </div>
+    <div class="card box">
+        <div class="card-body">
+            <div class="w-100">
+                <i class="fat fa-dove"></i>
+            </div>
+            <h1>Data Migrations</h1>
+            <p>Placeholder text describing the feature/service</p>
+            <div class="glow"></div>
+        </div>
+    </div>
+    <div class="card box">
+        <div class="card-body">
+            <div class="w-100">
+                <i class="fat fa-headset"></i>
+            </div>
+            <h1>Support Services</h1>
+            <p>Placeholder text describing the feature/service</p>
+            <div class="glow"></div>
+        </div>
+    </div>
+    <div class="card box">
+        <div class="card-body">
+            <div class="w-100">
+                <i class="fat fa-cloud-meatball"></i>
+            </div>
+            <h1>Server-Less Solutions</h1>
+            <p>Placeholder text describing the feature/service</p>
+            <div class="glow"></div>
+        </div>
+    </div>
+    <div class="card box">
+        <div class="card-body">
+            <div class="w-100">
+                <i class="fat fa-up-right-and-down-left-from-center"></i>
+            </div>
+            <h1>Cloud & On Prem Content</h1>
+            <p>Placeholder text describing the feature/service</p>
+            <div class="glow"></div>
+        </div>
+    </div>
+    <div class="card box">
+        <div class="card-body">
+            <div class="w-100">
+                <i class="fat fa-face-smile-beam"></i>
+            </div>
+            <h1>User Friendly UI</h1>
+            <p>Placeholder text describing the feature/service</p>
+            <div class="glow"></div>
+        </div>
+    </div>
+</div> -->
+<!-- FEATURES old-->
+<!-- FEATURES -->
+<div class="container features-wrapper2 mt-0" id="features">
+    <div class="feature">
+        <i class="fat fa-photo-film"></i>
+        <h4>Media Management</h4>
+        <p>Placeholder text describing the feature/service</p>
+    </div>
+    <div class="feature">
+        <i class="fat fa-users-gear"></i>
+        <h4>Automated Workflows</h4>
+        <p>Placeholder text describing the feature/service</p>
+    </div>
+    <div class="feature">
+        <i class="fat fa-robot"></i>
+        <h4>Metadata Enrichment</h4>
+        <p>Placeholder text describing the feature/service</p>
+    </div>
+    <div class="feature">
+        <i class="fat fa-dove"></i>
+        <h4>Data Migrations</h4>
+        <p>Placeholder text describing the feature/service</p>
+    </div>
+    <div class="feature">
+        <i class="fat fa-headset"></i>
+        <h4>Support Services</h4>
+        <p>Placeholder text describing the feature/service</p>
+    </div>
+    <div class="feature">
+        <i class="fat fa-cloud-meatball"></i>
+        <h4>Server-Less Solutions</h4>
+        <p>Placeholder text describing the feature/service</p>
+    </div>
+    <div class="feature">
+        <i class="fat fa-up-right-and-down-left-from-center"></i>
+        <h4>Cloud & On Prem Content</h4>
+        <p>Placeholder text describing the feature/service</p>
+    </div>
+    <div class="feature">
+        <i class="fat fa-face-smile-beam"></i>
+        <h4>User Friendly UI</h4>
+        <p>Placeholder text describing the feature/service</p>
+    </div>
+</div>
+<!-- FEATURES-->
+<div class="container-fluid quote">
+    <div class="container text-center">
+        <h2 class="highlight">Another <span class="extra">quote</span></h2>
+    </div>
+</div>
+<!-- q rate features cards list like benefits-->
+<div class="container">
+    <div class="row" id="qrate-features-wrapper">
+        #cards go here
+    </div>
+</div>
+<!-- q rate features -->
+<div class="container-fluid quote">
+    <div class="container text-center">
+        <h2 class="highlight">Another <span class="extra">quote</span></h2>
+    </div>
+</div>
+<!-- USE CASES -->
+<div class="container" id="usecases">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-auto">
+            <ul>
+                <li class="active">Use case #1</li>
+                <li>Use case #2</li>
+                <li>Use case #3</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- USE CASES -->
+<div class="container-fluid quote">
+    <div class="container text-center">
+        <h2 class="highlight">Another <span class="extra">quote</span></h2>
+    </div>
+</div>
+<!-- FAQ -->
+<div class="container">
+    <div class="card box">
+        <div class="card-body m-0 p-5">
+            <h1>FAQ</h1>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      Question #1
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Question #2
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Question #3
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                  </div>
+                </div>
+              </div>
+        </div>
+</div>
+<!-- FAQ -->
+<hr style="opacity: 0; margin-bottom: 100px;">
+<!-- FOOTER -->
+<!-- FOOTER -->
