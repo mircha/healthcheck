@@ -159,6 +159,7 @@ header{
         margin-right: 10px;
         border-radius: 0;
         font-size: 24px;
+        letter-spacing: 0.04em;
     }
     .nav-link:hover{
         border: 2px transparent;
@@ -174,6 +175,7 @@ header{
         font-weight: var(--bold);
         letter-spacing: 0.04em;
         color: #DDDDDD;
+
     }
     p{
         font-size: 18px;
@@ -188,6 +190,7 @@ header{
         font-size: 32px;
         font-weight: var(--bold);
         color: #DDDDDD;
+        letter-spacing: 0.03em;
     }
     p{
         font-size: 18px;
@@ -250,6 +253,10 @@ header{
     }
 }
 #faq{
+    .black-card{
+        background: transparent;
+        border: 0;
+    }
     .accordion-item {
         cursor: pointer;
         user-select: none;
