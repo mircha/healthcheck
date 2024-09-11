@@ -1,0 +1,62 @@
+#head_company,
+#head_support {
+    animation: fade 1s ease-in-out;
+
+    h1 {
+        font-size: 30px;
+        color: var(--text-color-light);
+        font-weight: var(--bold);
+        letter-spacing: 4%;
+        line-height: 150%;
+    }
+
+    h2 {
+        font-size: 26px;
+        color: var(--text-color-light);
+        font-weight: var(--bold);
+        letter-spacing: 4%;
+        line-height: 150%;
+    }
+
+    h3 {
+        font-size: 18px;
+        color: var(--text-color-light);
+        font-weight: 600;
+        letter-spacing: 5%;
+        line-height: 120%;
+    }
+
+    p {
+        font-size: 16px;
+        color: var(--text-color-light);
+        font-weight: 400;
+        letter-spacing: 5%;
+        line-height: 120%;
+    }
+}
+
+section>div>div>h5 {
+    font-size: 20px;
+    color: var(--text-color-light);
+    font-weight: var(--semi-bold);
+    letter-spacing: 4%;
+}
+
+section>div>div>p {
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 400;
+    letter-spacing: 0.015rem;
+}
+
+section>div>div>.card>.card-body>p, #head_qrate p {
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 400;
+    letter-spacing: 0.015rem;
+    line-height: 150%;
+}
+
+section>div>div>.card>.card-header {
+    border-color: transparent;
+}
