@@ -15,23 +15,26 @@
         <!-- header and navigation-->
         <header>
             <nav class="top navbar navbar-expand-lg navbar-dark bg-dark px-5">
-                <a class="navbar-brand header-color d-flex flex-nowrap align-items-end" href=""><img src="./assets/logo.svg" style="opacity: 0.5;" alt="logo">CloudAscent</a>
+                <a class="navbar-brand header-color d-flex flex-nowrap align-items-end" href="index.html"><img src="./assets/logo.svg" style="opacity: 0.5;" alt="logo">CloudAscent</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link text-color" href="#">Company</a>
+                            <a class="nav-link text-color" href="company.html">Company</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-color" href="#">Products</a>
+                            <a class="nav-link text-color" href="qrate.html">Qrate</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-color" href="#">Services</a>
+                            <a class="nav-link text-color" href="migrations.html">Migrations</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-color" href="#">Support</a>
+                            <a class="nav-link text-color" href="support.html">Support</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-color" href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -59,7 +62,7 @@
             <div class="container my-5 py-5" id="hero">
                 <div class="row">
                     <div class="col-7 text-color extra-bold d-flex flex-column justify-content-center">
-                        <h1>Do <span class="accent">MORE</span> For <span class="accent">LESS</span></h1>
+                        <h1>Do <span class="accent" id="more">MORE</span> For <span class="accent" id="less">LESS</span></h1>
                         <h1>From <span class="accent">ANYWHERE</span></h1>
                         <h2>Introducing a fully-integrated media management tool that solves your complex migration challenges, keeps pace with industry demands and provides long-term viability in our ever-changing world.</h2>
                     </div>
@@ -134,41 +137,41 @@
             <!-- FEATURES-->
             <section class="container-fluid my-5 py-5" id="features">
                 <div class="container py-5">
-                    <figure class="row p-5 m-5">
+                    <figure class="row p-5 m-5" id="feature1">
                         <div class="col-4 d-flex align-items-start justify-content-start">
                             <img src="assets/serverless.svg" alt="A picture of a cloud, serverless infrastructure">
                         </div>
                         <figcaption class="col">
                             <h3>Go <span class="accent-heading">Serverless</span></h3>
                             <p>Qrate is a scalable serverless enterprise Media Management solution.</p>
-                            <p class="accent">Learn More</p>
+                            <a href="qrate.html" class="accent-link">Learn More</a>
                         </figcaption>
                     </figure>
-                    <figure class="row p-5 m-5">
+                    <figure class="row p-5 m-5" id="feature2">
                         <figcaption class="col">
                             <h3>In <span class="accent-heading">Control</span></h3>
                             <p>Data democratization is the ability for information in a digital format to be accessible to the average end user.</p>
-                            <p class="accent">Learn More</p>
+                            <a href="qrate.html" class="accent-link">Learn More</a>
                         </figcaption>
                         <div class="col-4 d-flex align-items-start justify-content-end">
                             <img src="assets/control.svg" alt="A hand that is in control of cogs">
                         </div>
                     </figure>
-                    <figure class="row p-5 m-5">
+                    <figure class="row p-5 m-5" id="feature3">
                         <div class="col-4 d-flex align-items-start justify-content-start">
                             <img src="assets/migrate.svg" alt="Birds migrating, symbolizes transition">
                         </div>
                         <figcaption class="col">
                             <h3>Seamless <span class="accent-heading">Transition</span></h3>
                             <p>We understand that digital archives are in a constant state of storage migration as they continue to grow and age. Keeping pace, ensuring longevity and offering a transparent pricing model are always part of the plan.</p>
-                            <p class="accent">Learn More</p>
+                            <a href="migrations.html" class="accent-link">Learn More</a>
                         </figcaption>
                     </figure>
-                    <figure class="row p-5 m-5">
+                    <figure class="row p-5 m-5" id="feature4">
                         <figcaption class="col">
                             <h3>Always <span class="accent-heading">Helpful</span></h3>
                             <p>Multi-vendor support by a team of professionals.</p>
-                            <p class="accent">Learn More</p>
+                            <a href="support.html" class="accent-link">Learn More</a>
                         </figcaption>
                         <div class="col-4 d-flex align-items-start justify-content-end">
                             <img src="assets/support.svg" alt="Support team fixing problems">
@@ -182,7 +185,7 @@
                 <h3 style="font-size: 32px;">Services</h3>
                 <p>While using an user friendly and intuitive UI, cloud and on-prem content can be leveraged. </p>
                 <h5 class="pt-5">Key Services include:</h5>
-                <div class="row mx-5 px-5">
+                <div class="row mx-5 px-5" id="services_cards">
                     <div class="col">
                         <div class="card black-card m-5 p-5">
                             <div class="card-body">
@@ -206,13 +209,30 @@
                         </div>
                     </div>
                 </div>
-                <p class="py-5">But are not limited to. <span class="accent">Learn More</span></p>
+                <p class="py-5">But are not limited to. <a href="company.html" class="accent-link">Learn More</a></p>
             </section>
             <!-- SERVICES-->
+            <!-- STACK-->
+            <section class="container my-5 py-5" id="stack">
+                <h2 style="font-size: 32px; font-weight: 700; color: #DDDDDD">Powered by</h2>
+                <div class="row mt-5">
+                    <div class="col"><img src="./assets/brands/rust.svg" alt="rust"></div>
+                    <div class="col"><img src="./assets/brands/go.svg" alt="go"></div>
+                    <div class="col"><img src="./assets/brands/nodejs.svg" alt="node"></div>
+                    <div class="col"><img src="./assets/brands/python.svg" alt="python"></div>
+                    <div class="col"><img src="./assets/brands/docker.svg" alt="docker"></div>
+                    <div class="col"><img src="./assets/brands/kubernetes.svg" alt="kubernetes"></div>
+                    <div class="col"><img src="./assets/brands/redis.svg" alt="redis"></div>
+                    <div class="col"><img src="./assets/brands/postgresql.svg" alt="postgresql"></div>
+                    <div class="col"><img src="./assets/brands/react.svg" alt="react"></div>
+                    <div class="col"><img src="./assets/brands/pytorch.svg" alt="pytorch"></div>
+                </div>
+            </section>
+            <!-- STACK-->
             <!-- FAQ-->
             <section class="container my-5 py-5" id="faq">
-                <h2>FAQ</h2>
-                <div class="card black-card">
+                <h2 style="font-size: 32px; font-weight: 700; color: #DDDDDD">FAQ</h2>
+                <div class="card black-card" id="#q1">
                     <div class="card-body m-0 p-5">
                         <div class="accordion accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item">
@@ -225,7 +245,7 @@
                                 <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
                             </div>
                             </div>
-                            <div class="accordion-item">
+                            <div class="accordion-item" id="#q2">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                                     Question #2
