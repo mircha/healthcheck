@@ -618,23 +618,23 @@ label {
     font-weight: 600;
     font-size: 16px;
 }
-.form-control {
+.form-control, .form-select {
     background-color: var(--background-color);
     color: var(--text-color);
     /* border: 1px solid var(--text-color); */
-    border-image: linear-gradient(to right bottom, #dddddd 0%, #999999 100%) 1;
-    border-radius: 5px; /* this doesn't work */
-    border-width: 1px;
-    border-style: solid;
-    padding: 5px;
-}
-.form-control::before{
-    border: 1px solid var(--text-color);
+    border: 0;
+    box-shadow: 0px 0px 2px 0.5px var(--text-color);
     border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    width: 100%;
 }
-.form-control:focus {
-    border: 1px solid var(--accent);
-    box-shadow: none;
+.form-control:focus, .form-control:active, .form-select:focus, .form-select:active {
+    /* border: 1px solid var(--accent); */
+    border: 0;
+    box-shadow: 0px 0px 2px 0px var(--accent);
     outline: none;
     background-color: var(--background-color);
     color: var(--text-color);
