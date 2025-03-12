@@ -13,14 +13,19 @@
 <script>
 document.getElementById("trackSelector").addEventListener("change", function() {
     let track = document.getElementById("subtitleTrack").track;
-    let selectedClass = this.value;
+    let selectedStory = this.value;
 
     for (let cue of track.cues) {
-        if (cue.text.includes(`class="${selectedClass}"`)) {
-            cue.text = cue.text.replace(/<.*?>/g, ""); // Remove tags
+        if (cue.text.includes(`<${selectedStory}>`)) {
+            cue.text = cue.text.replace(/<story[0-9]>|<\/story[0-9]>/g, ""); // Keep selected story text, remove tags
         } else {
-            cue.text = "";
+            cue.text = ""; // Hide other story subtitles
         }
     }
 });
+
+document.onload = function() {
+    document.getElementById("trackSelector").trigger("change");
+}
+
 </script>
