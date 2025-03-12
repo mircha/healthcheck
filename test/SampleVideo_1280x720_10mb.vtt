@@ -1,5 +1,11 @@
 WEBVTT
 
+STYLE
+::cue(.story1) { color: white; }
+::cue(.story2) { color: yellow; }
+::cue(.story3) { color: cyan; }
+ENDSTYLE
+
 NOTE CloudAscent-Migration aasdfagaasc <-checksum
 
 00:00:00.000 --> 00:00:00.001
