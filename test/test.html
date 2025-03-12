@@ -10,14 +10,17 @@
 </select>
 
 <script>
-    document.getElementById("storySelector").addEventListener("change", function() {
-        let track = document.getElementById("subtitleTrack");
-        track.track.mode = "showing";
-
-        // Apply cue class based on selected option
-        let selectedClass = this.value;
-        for (let cue of track.track.cues) {
-            cue.text = `<${selectedClass}>${cue.text}</${selectedClass}>`;
+document.getElementById("storySelector").addEventListener("change", function() {
+    let track = document.getElementById("subtitleTrack");
+    let selectedStory = this.value;
+    
+    // Loop through cues and filter by story
+    for (let cue of track.track.cues) {
+        if (cue.text.includes(`<${selectedStory}>`)) {
+            cue.text = cue.text.replace(`<${selectedStory}>`, "").replace(`</${selectedStory}>`, "");
+        } else {
+            cue.text = "";
         }
-    });
+    }
+});
 </script>
