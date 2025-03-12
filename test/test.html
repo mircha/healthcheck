@@ -3,21 +3,21 @@
     <track id="subtitleTrack" label="Story #1" kind="subtitles" srclang="en" src="./SampleVideo_1280x720_10mb.vtt" default>
 </video>
 
-<select id="storySelector">
-    <option value="story1">Story #1 - Standard</option>
-    <option value="story2">Story #2 - Simplified</option>
-    <option value="story3">Story #3 - Summary</option>
+
+<select id="trackSelector">
+    <option value="story1">Story 1</option>
+    <option value="story2">Story 2</option>
+    <option value="story3">Story 3</option>
 </select>
 
 <script>
-document.getElementById("storySelector").addEventListener("change", function() {
-    let track = document.getElementById("subtitleTrack");
-    let selectedStory = this.value;
-    
-    // Loop through cues and filter by story
-    for (let cue of track.track.cues) {
-        if (cue.text.includes(`<${selectedStory}>`)) {
-            cue.text = cue.text.replace(`<${selectedStory}>`, "").replace(`</${selectedStory}>`, "");
+document.getElementById("trackSelector").addEventListener("change", function() {
+    let track = document.getElementById("subtitleTrack").track;
+    let selectedClass = this.value;
+
+    for (let cue of track.cues) {
+        if (cue.text.includes(`class="${selectedClass}"`)) {
+            cue.text = cue.text.replace(/<.*?>/g, ""); // Remove tags
         } else {
             cue.text = "";
         }
