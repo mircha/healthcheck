@@ -1,0 +1,23 @@
+<video id="video" controls>
+    <source src="https://raw.githubusercontent.com/mircha/healthcheck/refs/heads/master/test/SampleVideo_1280x720_10mb.mp4" type="video/mp4">
+    <track id="subtitleTrack" label="Story #1" kind="subtitles" srclang="en" src="https://raw.githubusercontent.com/mircha/healthcheck/refs/heads/master/test/SampleVideo_1280x720_10mb.vtt" default>
+</video>
+
+<select id="storySelector">
+    <option value="story1">Story #1 - Standard</option>
+    <option value="story2">Story #2 - Simplified</option>
+    <option value="story3">Story #3 - Summary</option>
+</select>
+
+<script>
+    document.getElementById("storySelector").addEventListener("change", function() {
+        let track = document.getElementById("subtitleTrack");
+        track.track.mode = "showing";
+
+        // Apply cue class based on selected option
+        let selectedClass = this.value;
+        for (let cue of track.track.cues) {
+            cue.text = `<${selectedClass}>${cue.text}</${selectedClass}>`;
+        }
+    });
+</script>
